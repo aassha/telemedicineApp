@@ -35,6 +35,7 @@ class DocumentVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        tappedCell = indexPath.row
         self.performSegue(withIdentifier: "editorSegue", sender: nil)
     }
     
@@ -63,11 +64,13 @@ class DocumentVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let editorVC: DocumentEditorVC = segue.destination as? DocumentEditorVC {
             let cellArray = documentCollection.indexPathsForSelectedItems
-            let selectedCell = cellArray?[0]
             //how to get index of selected cell
+            guard let selectedCell = tappedCell else{
+                return
+            }
             editorVC.reciever = self
-            editorVC.medicineNameText = documentsModel.documents[0].medicineName
-            editorVC.notesText = documentsModel.documents[0].notes
+            editorVC.medicineNameText = documentsModel.documents[selectedCell].medicineName
+            editorVC.notesText = documentsModel.documents[selectedCell].notes
         }
         
     }

@@ -10,5 +10,5 @@ import Foundation
 
 class DoctorSpecialties {
     var specialties = ["obgyn", "dermatology", "mentalHealth", "optometry", "orthopedics", "pediatrics"]
-    
+    var currentSpecialty: String?
 }

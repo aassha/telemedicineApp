@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED2AD6591F2D5F62008367EB /* DoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2AD6581F2D5F62008367EB /* DoctorModel.swift */; };
+		ED2AD65B1F2D66D7008367EB /* DoctorSpecialtiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2AD65A1F2D66D7008367EB /* DoctorSpecialtiesViewController.swift */; };
 		ED500F321F2AA55900715B0C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED500F301F2AA55900715B0C /* Bolts.framework */; };
 		ED500F331F2AA55900715B0C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED500F311F2AA55900715B0C /* Parse.framework */; };
 		ED500F351F2AB91D00715B0C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED500F341F2AB91D00715B0C /* ProfileViewController.swift */; };
-		ED500F471F2CDAA700715B0C /* DoctorSpecialtiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED500F461F2CDAA700715B0C /* DoctorSpecialtiesVC.swift */; };
-		ED500F491F2CDAD000715B0C /* DoctorSpecialtiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED500F481F2CDAD000715B0C /* DoctorSpecialtiesModel.swift */; };
+		ED500F471F2CDAA700715B0C /* DoctorCategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED500F461F2CDAA700715B0C /* DoctorCategoriesVC.swift */; };
+		ED500F491F2CDAD000715B0C /* DoctorCategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED500F481F2CDAD000715B0C /* DoctorCategoriesModel.swift */; };
 		ED5B559B1F26CE4900E83BDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5B559A1F26CE4900E83BDB /* AppDelegate.swift */; };
 		ED5B559D1F26CE4900E83BDB /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5B559C1F26CE4900E83BDB /* Login.swift */; };
 		ED5B55A01F26CE4900E83BDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5B559E1F26CE4900E83BDB /* Main.storyboard */; };
@@ -58,11 +60,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED2AD6581F2D5F62008367EB /* DoctorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoctorModel.swift; path = ../DoctorModel.swift; sourceTree = "<group>"; };
+		ED2AD65A1F2D66D7008367EB /* DoctorSpecialtiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorSpecialtiesViewController.swift; sourceTree = "<group>"; };
 		ED500F301F2AA55900715B0C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		ED500F311F2AA55900715B0C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		ED500F341F2AB91D00715B0C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		ED500F461F2CDAA700715B0C /* DoctorSpecialtiesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorSpecialtiesVC.swift; sourceTree = "<group>"; };
-		ED500F481F2CDAD000715B0C /* DoctorSpecialtiesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorSpecialtiesModel.swift; sourceTree = "<group>"; };
+		ED500F461F2CDAA700715B0C /* DoctorCategoriesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorCategoriesVC.swift; sourceTree = "<group>"; };
+		ED500F481F2CDAD000715B0C /* DoctorCategoriesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorCategoriesModel.swift; sourceTree = "<group>"; };
 		ED5B55971F26CE4900E83BDB /* telemedicineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = telemedicineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED5B559A1F26CE4900E83BDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED5B559C1F26CE4900E83BDB /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -163,21 +167,23 @@
 			children = (
 				ED5B559A1F26CE4900E83BDB /* AppDelegate.swift */,
 				ED5B559C1F26CE4900E83BDB /* Login.swift */,
+				EDDCC89C1F2A7AE300EBDD1F /* SignUpViewController.swift */,
+				EDDCC89E1F2A7B9A00EBDD1F /* Patient.swift */,
 				EDDCC8981F29539500EBDD1F /* Document.swift */,
 				EDDCC89A1F29606500EBDD1F /* DocumentEditorVC.swift */,
+				EDDCC8961F29528C00EBDD1F /* DocumentVC.swift */,
 				ED5B559E1F26CE4900E83BDB /* Main.storyboard */,
 				ED500F341F2AB91D00715B0C /* ProfileViewController.swift */,
-				EDDCC89E1F2A7B9A00EBDD1F /* Patient.swift */,
-				EDDCC89C1F2A7AE300EBDD1F /* SignUpViewController.swift */,
 				ED5B55A61F26CE4900E83BDB /* Info.plist */,
 				EDDCC8901F26E0D900EBDD1F /* CustomLogInView.swift */,
 				EDDCC88A1F26DBF500EBDD1F /* CustomButton.swift */,
 				EDDCC88C1F26DEAF00EBDD1F /* Util.swift */,
 				EDDCC8921F26E72900EBDD1F /* RoundImageView.swift */,
 				ED5B55A11F26CE4900E83BDB /* Assets.xcassets */,
-				ED500F481F2CDAD000715B0C /* DoctorSpecialtiesModel.swift */,
-				EDDCC8961F29528C00EBDD1F /* DocumentVC.swift */,
-				ED500F461F2CDAA700715B0C /* DoctorSpecialtiesVC.swift */,
+				ED500F481F2CDAD000715B0C /* DoctorCategoriesModel.swift */,
+				ED2AD6581F2D5F62008367EB /* DoctorModel.swift */,
+				ED500F461F2CDAA700715B0C /* DoctorCategoriesVC.swift */,
+				ED2AD65A1F2D66D7008367EB /* DoctorSpecialtiesViewController.swift */,
 				ED5B55A31F26CE4900E83BDB /* LaunchScreen.storyboard */,
 			);
 			path = telemedicineApp;
@@ -356,17 +362,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED500F471F2CDAA700715B0C /* DoctorSpecialtiesVC.swift in Sources */,
+				ED2AD65B1F2D66D7008367EB /* DoctorSpecialtiesViewController.swift in Sources */,
+				ED500F471F2CDAA700715B0C /* DoctorCategoriesVC.swift in Sources */,
 				EDDCC89D1F2A7AE300EBDD1F /* SignUpViewController.swift in Sources */,
 				EDDCC8931F26E72900EBDD1F /* RoundImageView.swift in Sources */,
 				EDDCC89B1F29606500EBDD1F /* DocumentEditorVC.swift in Sources */,
 				ED5B559D1F26CE4900E83BDB /* Login.swift in Sources */,
 				EDDCC89F1F2A7B9A00EBDD1F /* Patient.swift in Sources */,
 				EDDCC8971F29528C00EBDD1F /* DocumentVC.swift in Sources */,
-				ED500F491F2CDAD000715B0C /* DoctorSpecialtiesModel.swift in Sources */,
+				ED500F491F2CDAD000715B0C /* DoctorCategoriesModel.swift in Sources */,
 				ED5B559B1F26CE4900E83BDB /* AppDelegate.swift in Sources */,
 				EDDCC8991F29539500EBDD1F /* Document.swift in Sources */,
 				EDDCC8911F26E0D900EBDD1F /* CustomLogInView.swift in Sources */,
+				ED2AD6591F2D5F62008367EB /* DoctorModel.swift in Sources */,
 				ED500F351F2AB91D00715B0C /* ProfileViewController.swift in Sources */,
 				EDDCC88B1F26DBF500EBDD1F /* CustomButton.swift in Sources */,
 				EDDCC88D1F26DEAF00EBDD1F /* Util.swift in Sources */,

@@ -10,7 +10,9 @@ import UIKit
 import Parse
 
 class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    let patient = Patient()
+    var patient:Patient?
+    
+    @IBOutlet weak var usernametxt: UITextField!
     
     @IBOutlet weak var nametxt: UITextField!
     
@@ -22,12 +24,16 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBOutlet weak var sextxt: UITextField!
     
-    @IBOutlet weak var langaugetxt: UITextField!
+    @IBOutlet weak var languagetxt: UITextField!
+    
+    @IBOutlet weak var profileImage: UIImageView!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var signUpButton: CustomButton!
     @IBAction func signUpAction(_ sender: Any) {
         self.view.endEditing(true)
-        if ((nametxt.text?.isEmpty)! || (password.text?.isEmpty)! || (retypePasswordtxt.text?.isEmpty)! || (agetxt.text?.isEmpty)! || (sextxt.text?.isEmpty)! || (langaugetxt.text?.isEmpty)!) {
+        if ((nametxt.text?.isEmpty)! || (password.text?.isEmpty)! || (retypePasswordtxt.text?.isEmpty)! || (agetxt.text?.isEmpty)! || (sextxt.text?.isEmpty)! || (languagetxt.text?.isEmpty)!) {
             let missingFieldAlert = UIAlertController(title: "Missing Information", message: "Please fill all missing information", preferredStyle: UIAlertControllerStyle.alert)
             let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
             missingFieldAlert.addAction(ok)
@@ -41,23 +47,18 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             self.present(passwordsDoNotMatch, animated: true, completion: nil)
         }
         
-        let user = PFUser()
-        user.username = nametxt.text
-        user.password = password.text
-        user["Age"] = agetxt.text
-        user["Sex"] = sextxt.text
-        user["Language"] = langaugetxt.text
-        user["telphoneNumber"] = ""
-        //photo conversion to jpg
         let profileData = UIImageJPEGRepresentation(profileImage.image!, 0.5)
         let profileFile = PFFile(name: "profile.jpg", data: profileData!)
-        user["profilePicture"] = profileFile
+        
+        patient = Patient.init(name: nametxt.text!, sex: sextxt.text!, age: Int(agetxt.text!)!, language: languagetxt.text!)
+        patient?.username = nametxt.text
+        patient?.password = password.text
         //saving data to server
-        user.signUpInBackground { (success, error) in
+        patient?.signUpInBackground { (success, error) in
             if success {
                 print("registered")
                 //remembers user's info
-                UserDefaults.standard.set(user.username, forKey: "name")
+                UserDefaults.standard.set(self.patient?.username, forKey: "username")
                 UserDefaults.standard.synchronize()
                 //why must this be called here 
                 
@@ -75,8 +76,6 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.dismiss(animated: true, completion: nil)
     }
    
-    @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var scrollView: UIScrollView!
     var keyboard: CGRect?
     var scrollHeight: CGFloat = 0
     
@@ -92,8 +91,8 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         NotificationCenter.default.addObserver(self, selector: #selector(showKeyboard), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(hideKeyboard), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
+        //taps
         let hideKeyboardTap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardTapped))
-        //can this be done in storyboard instead of code
         hideKeyboardTap.numberOfTapsRequired = 1
         self.view.isUserInteractionEnabled = true
         self.view.addGestureRecognizer(hideKeyboardTap)

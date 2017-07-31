@@ -7,17 +7,54 @@
 //
 
 import Foundation
+import Parse
 
-class Patient {
-    var name: String?
-    var username: String?
-    var password: String?
-    var sex: String?
-    var age: String?
-    var country: String?
-    var language: String?
-    //these variables must be uploaded to the server 
-    //all of these variables are assigned values in the sign-up page 
-    //they must be set in the profile area.
+
+class Patient: PFUser {
+    var name: String? {
+        didSet {
+            self["name"] = name
+        }
+    }
+    var sex: String? {
+        didSet {
+            self["sex"] = sex
+        }
+    }
+    var age: Int? {
+        didSet{
+            self["age"] = age
+        }
+    }
+
+    
+    var language: String?{
+        didSet {
+            self["language"] = language
+        }
+    }
+    
+    var profilePicture: PFFile? {
+        didSet {
+            self["profilePicture"] = profilePicture
+        }
+    }
+    
+    override init() {
+        super.init()
+    }
+
+    init(name: String, sex: String, age: Int, language: String) {
+        print(name)
+        print(sex)
+        print(age)
+        print(language)
+        self.name = name
+        self.sex = sex
+        self.age = age
+        self.language = language
+        super.init()
+    }
+    
     
 }

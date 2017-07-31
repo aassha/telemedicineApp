@@ -28,5 +28,10 @@ class DoctorSpecialtiesVC: UIViewController, UICollectionViewDelegate, UICollect
         cell.specialtiesTitle.text = doctorSpecialties.specialties[indexPath.row]
         return cell
     }
+    
+    override func viewDidLoad() {
+        let doctor = Doctor()
+        print(doctor.getNumberofDoctorsInEachSpecialty())
+    }
 
 }

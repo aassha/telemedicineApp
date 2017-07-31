@@ -16,12 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        Parse.enableLocalDatastore()
         let parseConfig = ParseClientConfiguration{(ParseMutableClientConfiguration) in
             //accessing Heroku vio id and keys
             ParseMutableClientConfiguration.applicationId = "telemedicineapp"
             ParseMutableClientConfiguration.clientKey = "telemedicineappkey"
             //connects to server
             ParseMutableClientConfiguration.server = "http://doctortime.herokuapp.com/parse"
+            ParseMutableClientConfiguration.isLocalDatastoreEnabled = true
         }
         Parse.initialize(with: parseConfig)
         login()
@@ -52,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func login() {
         //remember user login
-        let name: String? = UserDefaults.standard.string(forKey: "name")
+        let name: String? = UserDefaults.standard.string(forKey: "username")
         
         if name != nil {
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

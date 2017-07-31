@@ -29,7 +29,7 @@ class Login: UIViewController {
         PFUser.logInWithUsername(inBackground: usernameTextField.text!, password: passwordTextField.text!) { (user: PFUser?, error: Error?) in
             if error == nil {
                 //saves the username is memory
-                UserDefaults.standard.set(user!.username, forKey: "name")
+                UserDefaults.standard.set(user!.username, forKey: "username")
                 UserDefaults.standard.synchronize()
                 //what does this do?
                 let appDelegate: AppDelegate =  UIApplication.shared.delegate as! AppDelegate
