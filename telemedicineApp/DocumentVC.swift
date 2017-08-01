@@ -36,6 +36,7 @@ class DocumentVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         tappedCell = indexPath.row
+        print(tappedCell)
         self.performSegue(withIdentifier: "editorSegue", sender: nil)
     }
     
@@ -45,8 +46,8 @@ class DocumentVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     func itemEdited(medicineName: String, notes: String) {
         //need to get index properly
-        documentsModel.documents[0].medicineName = medicineName
-        documentsModel.documents[0].notes = notes
+        documentsModel.documents[tappedCell!].medicineName = medicineName
+        documentsModel.documents[tappedCell!].notes = notes
         documentCollection.reloadData()
         documentsModel.textChanged()
     }

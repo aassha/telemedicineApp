@@ -26,7 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ParseMutableClientConfiguration.isLocalDatastoreEnabled = true
         }
         Parse.initialize(with: parseConfig)
-        login()
+        Patient.registerSubclass()
+        //login()
         return true
     }
 
@@ -54,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func login() {
         //remember user login
-        let name: String? = UserDefaults.standard.string(forKey: "username")
+        let name: String? = UserDefaults.standard.string(forKey: "name")
         
         if name != nil {
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

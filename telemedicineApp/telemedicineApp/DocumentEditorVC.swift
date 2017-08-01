@@ -13,18 +13,14 @@ protocol ItemEdited {
 }
 
 class DocumentEditorVC: UIViewController {
-    @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var medicineNameTextField: UITextField!
-    @IBOutlet weak var notesTextBox: UITextView!
     
-    var medicineNameText: String = "" {
-        didSet {
-            if isViewLoaded {
-                medicineNameTextField.text = medicineNameText
-            }//used for switching out words from different rows
-        }
-    }
     
+    var medicineNameText: String = ""
+//        {
+//        didSet {
+//            print(medicineNameText)
+//        }
+//    }
     var notesText: String = "" {
         didSet {
             if isViewLoaded {
@@ -32,13 +28,17 @@ class DocumentEditorVC: UIViewController {
             }
         }
     }
-    
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var medicineNameTextField: UITextField!
+    @IBOutlet weak var notesTextBox: UITextView!
     var reciever: ItemEdited?
     var mainView: DocumentEditorVC?
     override func viewDidLoad() {
         super.viewDidLoad()
         //why must this be redefined here
+        print("medicineName \(medicineNameText) ")
         medicineNameTextField.text = medicineNameText
+        print("textfield \(medicineNameTextField.text) ")
         notesTextBox.text = notesText
     }
     

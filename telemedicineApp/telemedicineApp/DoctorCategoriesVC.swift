@@ -16,7 +16,8 @@ class DoctorSpecialtiesCell: UICollectionViewCell {
 
 class DoctorSpecialtiesVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     let doctorSpecialties = DoctorSpecialties()
-    
+    let doctorModel = DoctorModel()
+    var tappedCell: Int?
     @IBOutlet weak var specialtiesCollection: UICollectionView!
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return doctorSpecialties.specialties.count
@@ -29,9 +30,24 @@ class DoctorSpecialtiesVC: UIViewController, UICollectionViewDelegate, UICollect
         return cell
     }
     
-    override func viewDidLoad() {
-        let doctor = Doctor()
-        print(doctor.getNumberofDoctorsInEachSpecialty())
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        tappedCell = indexPath.row
+        print("path: \(indexPath.row)")
+        print("Cell: \(tappedCell)")
+        self.performSegue(withIdentifier: "segueToDoctors", sender: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedCell = tappedCell else{
+            return
+        }
+        if let doctorsVC: DoctorViewController = segue.destination as? DoctorViewController{
+            print(selectedCell)
+            let filteredArray = doctorModel.getNumberofDoctorsInEachSpecialty(specialty: Specialty(rawValue: doctorSpecialties.specialties[selectedCell])!)
+            doctorsVC.doctorsArray = filteredArray
+        }
+    }
+    
+    
 
 }
