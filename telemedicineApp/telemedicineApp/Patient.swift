@@ -40,6 +40,8 @@ class Patient: PFUser {
         }
     }
     
+    var userType :UserType?
+    
     override init() {
         super.init()
     }
@@ -53,6 +55,7 @@ class Patient: PFUser {
         self.sex = sex
         self.age = age
         self.language = language
+        self.userType = .Patient
         super.init()
     }
     

@@ -11,6 +11,8 @@ import Parse
 
 class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var patient:Patient?
+    var userType: UserType?
+    var doctor: DoctorAn?
     
     @IBOutlet weak var usernametxt: UITextField!
     
@@ -32,48 +34,23 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBOutlet weak var signUpButton: CustomButton!
     @IBAction func signUpAction(_ sender: Any) {
-        self.view.endEditing(true)
-        if ((nametxt.text?.isEmpty)! || (password.text?.isEmpty)! || (retypePasswordtxt.text?.isEmpty)! || (agetxt.text?.isEmpty)! || (sextxt.text?.isEmpty)! || (languagetxt.text?.isEmpty)!) {
-            let missingFieldAlert = UIAlertController(title: "Missing Information", message: "Please fill all missing information", preferredStyle: UIAlertControllerStyle.alert)
-            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
-            missingFieldAlert.addAction(ok)
-            self.present(missingFieldAlert, animated: true, completion: nil)
+
+        guard let type = userType else{
+            print("No UserType in View Controller")
+            return
         }
-        //can put this in model
-        if retypePasswordtxt.text != password.text {
-            let passwordsDoNotMatch = UIAlertController(title: "Passwords do not match", message: "Please make sures the passwords match", preferredStyle: UIAlertControllerStyle.alert)
-            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
-            passwordsDoNotMatch.addAction(ok)
-            self.present(passwordsDoNotMatch, animated: true, completion: nil)
+        print("Type in Sign Up View Controller: \(type)")
+        switch type{
+        case .Patient: signUpPatient()
+        case .Doctor: signUpDoctor()
         }
         
-        let profileData = UIImageJPEGRepresentation(profileImage.image!, 0.5)
-        let profileFile = PFFile(name: "profile.jpg", data: profileData!)
-        
-        patient = Patient.init(name: nametxt.text!, sex: sextxt.text!, age: Int(agetxt.text!)!, language: languagetxt.text!)
-        patient?.username = nametxt.text
-        patient?.password = password.text
-        //saving data to server
-        patient?.signUpInBackground { (success, error) in
-            if success {
-                print("registered")
-                //remembers user's info
-                UserDefaults.standard.set(self.patient?.username, forKey: "username")
-                UserDefaults.standard.synchronize()
-                //why must this be called here 
-                
-                let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.login()
-            } else {
-                print(error?.localizedDescription)
-            }
-        }
     }
     
     @IBOutlet weak var cancelButton: CustomButton!
     
     @IBAction func cancelAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "Sign Up To Login", sender: nil)
     }
    
     var keyboard: CGRect?
@@ -103,6 +80,10 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.profileImage.addGestureRecognizer(profileImageTap)
         profileImage.layer.cornerRadius = profileImage.frame.size.width/2
         profileImage.clipsToBounds = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
     }
     
     //allows for scrolling when keyboard is shown, it prevents the bottom buttons and textFields from being hidden
@@ -139,5 +120,98 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         profileImage.image = info[UIImagePickerControllerEditedImage] as? UIImage
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func signUpDoctor(){
+        print("In signUpDoctor")
+        self.view.endEditing(true)
+        if ((nametxt.text?.isEmpty)! || (password.text?.isEmpty)! || (retypePasswordtxt.text?.isEmpty)! || (agetxt.text?.isEmpty)! || (sextxt.text?.isEmpty)! || (languagetxt.text?.isEmpty)!) {
+            let missingFieldAlert = UIAlertController(title: "Missing Information", message: "Please fill all missing information", preferredStyle: UIAlertControllerStyle.alert)
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+            missingFieldAlert.addAction(ok)
+            self.present(missingFieldAlert, animated: true, completion: nil)
+        }
+        //can put this in model
+        if retypePasswordtxt.text != password.text {
+            let passwordsDoNotMatch = UIAlertController(title: "Passwords do not match", message: "Please make sures the passwords match", preferredStyle: UIAlertControllerStyle.alert)
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+            passwordsDoNotMatch.addAction(ok)
+            self.present(passwordsDoNotMatch, animated: true, completion: nil)
+        }
+        
+        let profileData = UIImageJPEGRepresentation(profileImage.image!, 0.5)
+        let profileFile = PFFile(name: "profile.jpg", data: profileData!)
+        
+        guard let name = nametxt.text, let sex = sextxt.text, let age =  agetxt.text, let language =  languagetxt.text, let username = usernametxt.text else{
+            return
+        }
+        
+        doctor = DoctorAn.init(name: name, sex: sex, age: Int(age)!, language: language)
+        print("doctor variable initialized")
+        
+        guard let query = PFUser.query() else{
+            print("nil Query")
+            return
+        }
+        
+        
+       
+            doctor?.username = usernametxt.text
+            doctor?.password = password.text
+            
+            print("About to get more info")
+            
+            performSegue(withIdentifier: "Get More Doctor Info", sender: nil)
+        
+        
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let moreInfoVC: DoctorExtraSignUpVC = segue.destination as? DoctorExtraSignUpVC{
+            moreInfoVC.doctor = doctor
+        }
+    }
+    
+    func signUpPatient(){
+        self.view.endEditing(true)
+        if ((nametxt.text?.isEmpty)! || (password.text?.isEmpty)! || (retypePasswordtxt.text?.isEmpty)! || (agetxt.text?.isEmpty)! || (sextxt.text?.isEmpty)! || (languagetxt.text?.isEmpty)!) {
+            let missingFieldAlert = UIAlertController(title: "Missing Information", message: "Please fill all missing information", preferredStyle: UIAlertControllerStyle.alert)
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+            missingFieldAlert.addAction(ok)
+            self.present(missingFieldAlert, animated: true, completion: nil)
+        }
+        //can put this in model
+        if retypePasswordtxt.text != password.text {
+            let passwordsDoNotMatch = UIAlertController(title: "Passwords do not match", message: "Please make sures the passwords match", preferredStyle: UIAlertControllerStyle.alert)
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+            passwordsDoNotMatch.addAction(ok)
+            self.present(passwordsDoNotMatch, animated: true, completion: nil)
+        }
+        
+        let profileData = UIImageJPEGRepresentation(profileImage.image!, 0.5)
+        let profileFile = PFFile(name: "profile.jpg", data: profileData!)
+        
+        patient = Patient.init(name: nametxt.text!, sex: sextxt.text!, age: Int(agetxt.text!)!, language: languagetxt.text!)
+        patient?.username = usernametxt.text
+        patient?.password = password.text
+        //saving data to server
+        patient?.signUpInBackground { (success, error) in
+            if success {
+                print("registered")
+                //remembers user's info
+                UserDefaults.standard.set(self.patient?.username, forKey: "username")
+                UserDefaults.standard.synchronize()
+                //why must this be called here
+                
+                let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.userType = self.userType
+                appDelegate.login()
+            } else {
+                print("got an error")
+                print(error?.localizedDescription)
+            }
+        }
+
     }
 }

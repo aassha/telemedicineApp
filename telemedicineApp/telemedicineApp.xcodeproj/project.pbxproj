@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A138E53C1F30DF63002AC40A /* ProtocolEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A138E53B1F30DF63002AC40A /* ProtocolEnum.swift */; };
+		A138E53E1F30E75D002AC40A /* DoctorClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A138E53D1F30E75D002AC40A /* DoctorClass.swift */; };
+		A138E5401F30F5D8002AC40A /* DoctorExtraSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A138E53F1F30F5D8002AC40A /* DoctorExtraSignUpVC.swift */; };
 		ED2AD6591F2D5F62008367EB /* DoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2AD6581F2D5F62008367EB /* DoctorModel.swift */; };
 		ED2AD65B1F2D66D7008367EB /* DoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2AD65A1F2D66D7008367EB /* DoctorViewController.swift */; };
 		ED500F321F2AA55900715B0C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED500F301F2AA55900715B0C /* Bolts.framework */; };
@@ -60,6 +63,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A138E53B1F30DF63002AC40A /* ProtocolEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolEnum.swift; sourceTree = "<group>"; };
+		A138E53D1F30E75D002AC40A /* DoctorClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorClass.swift; sourceTree = "<group>"; };
+		A138E53F1F30F5D8002AC40A /* DoctorExtraSignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorExtraSignUpVC.swift; sourceTree = "<group>"; };
 		ED2AD6581F2D5F62008367EB /* DoctorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoctorModel.swift; path = ../DoctorModel.swift; sourceTree = "<group>"; };
 		ED2AD65A1F2D66D7008367EB /* DoctorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorViewController.swift; sourceTree = "<group>"; };
 		ED500F301F2AA55900715B0C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -168,6 +174,7 @@
 				ED5B559A1F26CE4900E83BDB /* AppDelegate.swift */,
 				ED5B559C1F26CE4900E83BDB /* Login.swift */,
 				EDDCC89C1F2A7AE300EBDD1F /* SignUpViewController.swift */,
+				A138E53F1F30F5D8002AC40A /* DoctorExtraSignUpVC.swift */,
 				EDDCC89E1F2A7B9A00EBDD1F /* Patient.swift */,
 				EDDCC8981F29539500EBDD1F /* Document.swift */,
 				EDDCC89A1F29606500EBDD1F /* DocumentEditorVC.swift */,
@@ -183,7 +190,9 @@
 				ED500F481F2CDAD000715B0C /* DoctorCategoriesModel.swift */,
 				ED500F461F2CDAA700715B0C /* DoctorCategoriesVC.swift */,
 				ED2AD6581F2D5F62008367EB /* DoctorModel.swift */,
+				A138E53D1F30E75D002AC40A /* DoctorClass.swift */,
 				ED2AD65A1F2D66D7008367EB /* DoctorViewController.swift */,
+				A138E53B1F30DF63002AC40A /* ProtocolEnum.swift */,
 				ED5B55A31F26CE4900E83BDB /* LaunchScreen.storyboard */,
 			);
 			path = telemedicineApp;
@@ -293,7 +302,7 @@
 				TargetAttributes = {
 					ED5B55961F26CE4900E83BDB = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = RV9F4327PU;
+						DevelopmentTeam = UY5EJ29PEW;
 						ProvisioningStyle = Automatic;
 					};
 					ED5B55AA1F26CE4900E83BDB = {
@@ -366,9 +375,12 @@
 				ED500F471F2CDAA700715B0C /* DoctorCategoriesVC.swift in Sources */,
 				EDDCC89D1F2A7AE300EBDD1F /* SignUpViewController.swift in Sources */,
 				EDDCC8931F26E72900EBDD1F /* RoundImageView.swift in Sources */,
+				A138E5401F30F5D8002AC40A /* DoctorExtraSignUpVC.swift in Sources */,
 				EDDCC89B1F29606500EBDD1F /* DocumentEditorVC.swift in Sources */,
+				A138E53E1F30E75D002AC40A /* DoctorClass.swift in Sources */,
 				ED5B559D1F26CE4900E83BDB /* Login.swift in Sources */,
 				EDDCC89F1F2A7B9A00EBDD1F /* Patient.swift in Sources */,
+				A138E53C1F30DF63002AC40A /* ProtocolEnum.swift in Sources */,
 				EDDCC8971F29528C00EBDD1F /* DocumentVC.swift in Sources */,
 				ED500F491F2CDAD000715B0C /* DoctorCategoriesModel.swift in Sources */,
 				ED5B559B1F26CE4900E83BDB /* AppDelegate.swift in Sources */,
@@ -529,12 +541,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = RV9F4327PU;
+				DEVELOPMENT_TEAM = UY5EJ29PEW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = telemedicineApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AShah.telemedicineApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -546,12 +559,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = RV9F4327PU;
+				DEVELOPMENT_TEAM = UY5EJ29PEW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = telemedicineApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AShah.telemedicineApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
