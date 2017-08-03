@@ -19,7 +19,7 @@ class DoctorViewController: UIViewController,UICollectionViewDelegate, UICollect
     @IBOutlet weak var doctorCollection: UICollectionView!
     var array: [Any] = []
     var tappedCell: Int?
-    var doctorsArray: [DoctorAn]?
+    var doctorsArray: [DoctorRetrieveFromDB]?
     var specialty:String?
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -73,7 +73,7 @@ class DoctorViewController: UIViewController,UICollectionViewDelegate, UICollect
             let doctorInfo = objects as? [PFUser]
             self.doctorsArray = Array() // []
             for doc in doctorInfo!{
-                let doctorAn = DoctorAn()
+                let doctorAn = DoctorRetrieveFromDB()
                 doctorAn.doctor = doc
                 doctorAn.specialty = doc["specialty"] as? String
                 self.doctorsArray?.append(doctorAn)

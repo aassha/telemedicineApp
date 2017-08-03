@@ -10,7 +10,7 @@ import UIKit
 import Parse
 class DoctorSpecialtiesCell: UICollectionViewCell {
     
-    var doctorAn:[DoctorAn] = []
+    var doctorAn:[DoctorRetrieveFromDB] = []
     
     var specialty:String?
     
@@ -21,7 +21,7 @@ class DoctorSpecialtiesCell: UICollectionViewCell {
 
 class DoctorSpecialtiesVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var doctorArrayFromDB:[DoctorAn] = []
+    var doctorArrayFromDB:[DoctorRetrieveFromDB] = []
     let doctorSpecialties = DoctorSpecialties()
     let doctorModel = DoctorModel()
     var tappedCell: Int?
@@ -71,7 +71,7 @@ class DoctorSpecialtiesVC: UIViewController, UICollectionViewDelegate, UICollect
             doctorsVC.specialty = specialtyCategory
         }
     }
-    func getNumberofDoctorsInEachSpecialty(specialty:String) -> [DoctorAn] {
+    func getNumberofDoctorsInEachSpecialty(specialty:String) -> [DoctorRetrieveFromDB] {
         return doctorArrayFromDB.filter{$0.specialty == specialty}
     }
     
