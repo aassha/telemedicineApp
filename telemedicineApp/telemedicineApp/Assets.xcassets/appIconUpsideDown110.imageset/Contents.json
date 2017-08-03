@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "appIconUpsideDown110.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "whitePlusButton.png",
       "scale" : "2x"
     },
     {

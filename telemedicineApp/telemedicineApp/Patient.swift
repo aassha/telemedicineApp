@@ -9,7 +9,7 @@
 import Foundation
 import Parse
 
-
+//MARK: Aastha Shah
 class Patient: PFUser {
     var name: String? {
         didSet {
@@ -46,19 +46,72 @@ class Patient: PFUser {
         }
     }
     
+    var licenseNum: Int?{
+        didSet{
+            self["licenseNum"] = licenseNum
+        }
+    }
+    
+    var specialty: Specialty?{
+        didSet{
+            self["specialty"] = specialty?.rawValue
+        }
+    }
+    
+    var numYearsPractice: Int?{
+        didSet{
+            self["numYearsPractice"] = numYearsPractice
+        }
+    }
+    
+    var price: Int?{
+        didSet{
+            self["price"] = price
+        }
+    }
+    
+    var location: String?{
+        didSet{
+            self["location"] = location
+        }
+    }
+    
+    var phoneNum: Int?{
+        didSet{
+            self["phoneNum"] = phoneNum
+        }
+    }
+    
+    
+    var isOnline: Bool?{
+        didSet{
+            self["isOnline"] = isOnline
+        }
+    }
+    
+    override static func parseClassName() -> String {
+        return "_User"
+    }
+    
     override init() {
         super.init()
     }
 
-    init(name: String, sex: String, age: Int, language: String) {
-        super.init()
+    init(name: String, sex: String, age: Int, language: String, profilePicture: PFFile) {
+        print(name)
+        print(sex)
+        print(age)
+        print(language)
+
         self.name = name
         self.sex = sex
         self.age = age
         self.language = language
+
         self.userType = .patient
-        
+
+        self.profilePicture = profilePicture
+        super.init()
     }
-    
     
 }

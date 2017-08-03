@@ -5,9 +5,12 @@
 //  Created by Aastha Shah on 7/26/17.
 //  Copyright © 2017 Aastha Shah. All rights reserved.
 //
-
+//MARK: Aastha Shah
 import Foundation
 
+protocol DocumentModelListenerProtocol{
+    func documentsChanged() -> Void
+}
 
 class Document {
     var delegate: DocumentModelListenerProtocol?

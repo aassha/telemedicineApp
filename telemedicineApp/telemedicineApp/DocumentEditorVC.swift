@@ -9,10 +9,16 @@
 import UIKit
 
 
+//MARK: Aastha Shah
+protocol ItemEdited {
+    func itemEdited(medicineName: String, notes: String)
+}
 
-class DocumentEditorVC: UIViewController {
+
+class DocumentEditorVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     
     
+    @IBOutlet weak var documentImage: UIImageView!
     var medicineNameText: String = ""
 //        {
 //        didSet {
@@ -31,6 +37,7 @@ class DocumentEditorVC: UIViewController {
     @IBOutlet weak var notesTextBox: UITextView!
     var reciever: ItemEdited?
     var mainView: DocumentEditorVC?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //why must this be redefined here
@@ -38,6 +45,12 @@ class DocumentEditorVC: UIViewController {
         medicineNameTextField.text = medicineNameText
         print("textfield \(medicineNameTextField.text) ")
         notesTextBox.text = notesText
+        
+        let documentImageTap = UITapGestureRecognizer(target: self, action: #selector(placeImage))
+        documentImageTap.numberOfTapsRequired = 1
+        self.documentImage.isUserInteractionEnabled = true
+        self.documentImage.addGestureRecognizer(documentImageTap)
+        documentImage.clipsToBounds = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -49,6 +62,20 @@ class DocumentEditorVC: UIViewController {
                 return
         }
         reciever?.itemEdited(medicineName: name, notes: description)
+    }
+    
+    func placeImage(recognizer: UITapGestureRecognizer){
+        let selectImage = UIImagePickerController()
+        selectImage.delegate = self
+        selectImage.sourceType = .photoLibrary
+        selectImage.allowsEditing = true
+        present(selectImage, animated: true, completion: nil)
+    }
+    
+    //set selected image as image profile picture
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        documentImage.image = info[UIImagePickerControllerEditedImage] as? UIImage
+        self.dismiss(animated: true, completion: nil)
     }
     
 

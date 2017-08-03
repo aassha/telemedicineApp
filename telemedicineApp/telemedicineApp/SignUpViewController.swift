@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 
+
 class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var patient:Patient?
     var userType: UserType?
@@ -30,6 +31,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBOutlet weak var profileImage: UIImageView!
     
+    @IBOutlet weak var emailtxt: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var signUpButton: CustomButton!
@@ -69,6 +71,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     var scrollHeight: CGFloat = 0
     
     override func viewDidLoad() {
+        //SOURCE: https://www.udemy.com/create-instagram-swift-xcode/learn/v4/content
         //sets the scrollView's frame to that of the main view controller, that is the screen size
         scrollView.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         //sets the scrolling to the height of the main view
@@ -99,6 +102,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     //allows for scrolling when keyboard is shown, it prevents the bottom buttons and textFields from being hidden
+    //SOURCE: https://www.udemy.com/create-instagram-swift-xcode/learn/v4/content
     func showKeyboard(notification: NSNotification) {
         //keyboard sizes are defined here
         keyboard = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue
@@ -109,6 +113,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
     }
     //allows the screen to return to normal where there is no scrolling permitted
+    //SOURCE: https://www.udemy.com/create-instagram-swift-xcode/learn/v4/content
     func hideKeyboard(notification: NSNotification) {
         UIView.animate(withDuration: 0.4) {
             self.scrollView.frame.size.height = self.view.frame.height
@@ -116,10 +121,11 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     //tapping on view will hide the keyboard as editing is no longer allowed
     //touching the textFields automatically engages the keyboard because it is in built
+    //SOURCE: https://www.udemy.com/create-instagram-swift-xcode/learn/v4/content
     func hideKeyboardTapped(recognizer: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
-    
+    //SOURCE: https://www.udemy.com/create-instagram-swift-xcode/learn/v4/content
     func placeImage(recognizer: UITapGestureRecognizer){
         let selectImage = UIImagePickerController()
         selectImage.delegate = self
@@ -128,7 +134,9 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         present(selectImage, animated: true, completion: nil)
     }
     
-    //set selected image as image profile picture
+  
+    //set selected image as image profile picture 
+    //SOURCE: https://www.udemy.com/create-instagram-swift-xcode/learn/v4/content
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         profileImage.image = info[UIImagePickerControllerEditedImage] as? UIImage
         self.dismiss(animated: true, completion: nil)

@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var userType: UserType?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        //SOURCE: https://www.udemy.com/create-instagram-swift-xcode/learn/v4/content
         Parse.enableLocalDatastore()
         let parseConfig = ParseClientConfiguration{(ParseMutableClientConfiguration) in
             //accessing Heroku vio id and keys
@@ -27,8 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         Parse.initialize(with: parseConfig)
         Patient.registerSubclass()
-        DoctorAn.registerSubclass()
 
+      
         login()
         return true
     }
@@ -63,9 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let type = userType else{
             print("nil type app delegate")
             return
-        }
-        
-        
+        }        
         if name != nil {
             print("prepare to switch")
             switch type{

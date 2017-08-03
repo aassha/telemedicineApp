@@ -9,16 +9,16 @@
 import UIKit
 import Parse
 class Login: UIViewController {
-    
+   
     var userType: UserType?
     
     @IBOutlet weak var usernameTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var login: UIButton!
+    @IBOutlet weak var login: CustomButton?
     
-    @IBOutlet weak var signUp: UIButton!
+    @IBOutlet weak var signUp: CustomButton?
     
     
     override func viewDidLoad() {
@@ -28,6 +28,8 @@ class Login: UIViewController {
         self.view.addGestureRecognizer(hideKeyboardTap)
     }
    
+
+    @IBOutlet weak var appIconCustomView: customImageAnimation!
 
     @IBAction func loginFunc(_ sender: Any) {
         if (usernameTextField.text?.isEmpty)! || (passwordTextField.text?.isEmpty)! {
@@ -40,6 +42,7 @@ class Login: UIViewController {
         PFUser.logInWithUsername(inBackground: usernameTextField.text!, password: passwordTextField.text!) { (user: PFUser?, error: Error?) in
             if error == nil {
                 //saves the username is memory
+                //SOURCE: https://www.udemy.com/create-instagram-swift-xcode/learn/v4/content
                 UserDefaults.standard.set(user!.username, forKey: "username")
                 UserDefaults.standard.synchronize()
                 //what does this do?
@@ -51,10 +54,17 @@ class Login: UIViewController {
                 print(type)
                 appDelegate.userType = type
                 appDelegate.login()
+                
+            } else {
+                let incorrectAccount = UIAlertController(title: "No Account Found!", message: "Please check the password and username", preferredStyle: UIAlertControllerStyle.alert)
+                let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+                incorrectAccount.addAction(ok)
+                self.present(incorrectAccount, animated: true, completion: nil)
             }
         }
     }
     
+
     func hideKeyboardTapped(recognizer: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
@@ -68,6 +78,7 @@ class Login: UIViewController {
             case .doctor: signUpVC.userType = .doctor
             }
         }
+    
     }
     
     @IBAction func signUpPatient(_ sender: Any) {
