@@ -12,13 +12,15 @@ import Parse
 
 class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var patient:Patient?
+    var userType: UserType?
+    var doctor: DoctorAn?
     
     @IBOutlet weak var usernametxt: UITextField!
     
     @IBOutlet weak var nametxt: UITextField!
     
     @IBOutlet weak var password: UITextField!
-
+    
     @IBOutlet weak var retypePasswordtxt: UITextField!
     
     @IBOutlet weak var agetxt: UITextField!
@@ -34,66 +36,37 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBOutlet weak var signUpButton: CustomButton!
     @IBAction func signUpAction(_ sender: Any) {
-        self.view.endEditing(true)
-        guard let username = usernametxt.text, let name = nametxt.text, let passwordString = password.text, let retypePassword = password.text, let age = agetxt.text, let sex = sextxt.text, let language = languagetxt.text, let email = emailtxt.text else {
+        
+        guard let type = userType else{
+            print("No UserType in View Controller")
             return
         }
-        print(username)
-        if ((name.isEmpty) || (passwordString.isEmpty) || (retypePassword.isEmpty) || (age.isEmpty) || (sex.isEmpty) || (language.isEmpty)||(username.isEmpty) || (email.isEmpty)) {
-            let missingFieldAlert = UIAlertController(title: "Missing Information", message: "Please fill all missing information", preferredStyle: UIAlertControllerStyle.alert)
-            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
-            missingFieldAlert.addAction(ok)
-            self.present(missingFieldAlert, animated: true, completion: nil)
-        }
-        if passwordString != retypePassword && username != ""{
-            let passwordsDoNotMatch = UIAlertController(title: "Passwords do not match", message: "Please make sures the passwords match", preferredStyle: UIAlertControllerStyle.alert)
-            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
-            passwordsDoNotMatch.addAction(ok)
-            self.present(passwordsDoNotMatch, animated: true, completion: nil)
-        }
-        //SOURCE: https://www.udemy.com/create-instagram-swift-xcode/learn/v4/content
-        let profileData = UIImageJPEGRepresentation(profileImage.image!, 0.5)
-        let profileFile = PFFile(name: "profile.jpg", data: profileData!)
-        guard let ageInt = Int(age) else {
-            return
-        }
-        guard let imageFile = profileFile else {
-            return
+        print("Type in Sign Up View Controller: \(type)")
+        switch type{
+        case .patient: signUpPatient()
+        case .doctor: signUpDoctor()
         }
         
-        patient = Patient.init(name: name, sex: sex, age: ageInt, language: language, profilePicture: imageFile)
-        patient?.username = username
-        patient?.password = passwordString
-        patient?.email = email
-        patient?["name"] = name
-        patient?["sex"] = sex
-        patient?["age"] = Int(age)
-        patient?["language"] = language
-        patient?["profileImage"] = imageFile
-        
-        //saving data to server
-        patient?.signUpInBackground { (success, error) in
-            if success {
-                print("registered")
-                UserDefaults.standard.set(self.patient?.username, forKey: "username")
-                UserDefaults.standard.synchronize()
-                let appDelegate: AppDelegate =  UIApplication.shared.delegate as! AppDelegate
-                appDelegate.login()
-            } else {
-                let failuretoSignUp = UIAlertController(title: "Cannot Sign Up", message: "\(error)", preferredStyle: UIAlertControllerStyle.alert)
-                let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
-                failuretoSignUp.addAction(ok)
-                self.present(failuretoSignUp, animated: true, completion: nil)
-            }
-        }
     }
     
     @IBOutlet weak var cancelButton: CustomButton!
     
     @IBAction func cancelAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+      let alertView = SCLAlertView()
+        alertView.addButton("Yes"){
+        }
+        alertView.addButton("No", action: { return})
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        alertView.showWarning("Are you sure?", subTitle: "This will erase all your information")
+        appDelegate.userType = nil
+        performSegue(withIdentifier: "Sign Up To Login", sender: nil)
+
+    
+        //kobidele@gmail.com
+        
+        
     }
-   
+    
     var keyboard: CGRect?
     var scrollHeight: CGFloat = 0
     
@@ -122,6 +95,10 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.profileImage.addGestureRecognizer(profileImageTap)
         profileImage.layer.cornerRadius = profileImage.frame.size.width/2
         profileImage.clipsToBounds = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
     }
     
     //allows for scrolling when keyboard is shown, it prevents the bottom buttons and textFields from being hidden
@@ -157,10 +134,120 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         present(selectImage, animated: true, completion: nil)
     }
     
+  
     //set selected image as image profile picture 
     //SOURCE: https://www.udemy.com/create-instagram-swift-xcode/learn/v4/content
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         profileImage.image = info[UIImagePickerControllerEditedImage] as? UIImage
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func signUpDoctor(){
+        print("In signUpDoctor")
+        self.view.endEditing(true)
+        if ((nametxt.text?.isEmpty)! || (password.text?.isEmpty)! || (retypePasswordtxt.text?.isEmpty)! || (agetxt.text?.isEmpty)! || (sextxt.text?.isEmpty)! || (languagetxt.text?.isEmpty)!) {
+            let missingFieldAlert = UIAlertController(title: "Missing Information", message: "Please fill all missing information", preferredStyle: UIAlertControllerStyle.alert)
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+            missingFieldAlert.addAction(ok)
+            self.present(missingFieldAlert, animated: true, completion: nil)
+        }
+        //can put this in model
+        if retypePasswordtxt.text != password.text {
+            let passwordsDoNotMatch = UIAlertController(title: "Passwords do not match", message: "Please make sures the passwords match", preferredStyle: UIAlertControllerStyle.alert)
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+            passwordsDoNotMatch.addAction(ok)
+            self.present(passwordsDoNotMatch, animated: true, completion: nil)
+        }
+        
+        
+        guard let profileData = UIImageJPEGRepresentation(profileImage.image!, 0.5) else{
+            let missingFieldAlert = UIAlertController(title: "Missing Information", message: "Please fill all missing information", preferredStyle: UIAlertControllerStyle.alert)
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+            missingFieldAlert.addAction(ok)
+            self.present(missingFieldAlert, animated: true, completion: nil)
+            return
+        }
+        
+        let profileFile = PFFile(name: "profile.jpg", data: profileData)
+        
+        guard let name = nametxt.text, let sex = sextxt.text, let age =  agetxt.text, let language =  languagetxt.text, let username = usernametxt.text else{
+            return
+        }
+        
+        doctor = DoctorAn.init(name: name, sex: sex, age: Int(age)!, language: language)
+        print("doctor variable initialized")
+        
+        guard let query = PFUser.query() else{
+            print("nil Query")
+            return
+        }
+        
+        
+        doctor?.profilePicture = profileFile
+        doctor?.username = username
+        doctor?.password = password.text
+        
+        print("About to get more info")
+        
+        performSegue(withIdentifier: "Get More Doctor Info", sender: nil)
+        
+        
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let moreInfoVC: DoctorExtraSignUpVC = segue.destination as? DoctorExtraSignUpVC{
+            moreInfoVC.doctor = doctor
+        }
+    }
+    
+    func signUpPatient(){
+        self.view.endEditing(true)
+        if ((nametxt.text?.isEmpty)! || (password.text?.isEmpty)! || (retypePasswordtxt.text?.isEmpty)! || (agetxt.text?.isEmpty)! || (sextxt.text?.isEmpty)! || (languagetxt.text?.isEmpty)!) {
+            let missingFieldAlert = UIAlertController(title: "Missing Information", message: "Please fill all missing information", preferredStyle: UIAlertControllerStyle.alert)
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+            missingFieldAlert.addAction(ok)
+            self.present(missingFieldAlert, animated: true, completion: nil)
+        }
+        //can put this in model
+        if retypePasswordtxt.text != password.text {
+            let passwordsDoNotMatch = UIAlertController(title: "Passwords do not match", message: "Please make sures the passwords match", preferredStyle: UIAlertControllerStyle.alert)
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+            passwordsDoNotMatch.addAction(ok)
+            self.present(passwordsDoNotMatch, animated: true, completion: nil)
+        }
+        
+        let profileData = UIImageJPEGRepresentation(profileImage.image!, 0.5)
+        let profileFile = PFFile(name: "profile.jpg", data: profileData!)
+        
+        guard let name = nametxt.text, let sex = sextxt.text, let age =  agetxt.text, let language =  languagetxt.text, let username = usernametxt.text else{
+            return
+        }
+        patient = Patient.init(name: name, sex: sex, age: Int(age)!, language: language)
+        patient?.username = usernametxt.text
+        patient?.password = password.text
+        patient?["name"] = patient?.name
+        patient?["sex"] = patient?.sex
+        patient?["age"] = patient?.age
+        patient?["language"] = patient?.language
+        patient?["userType"] = "patient"
+        //saving data to server
+        patient?.signUpInBackground { (success, error) in
+            if success {
+                print("registered")
+                //remembers user's info
+                UserDefaults.standard.set(self.patient?.username, forKey: "username")
+                UserDefaults.standard.synchronize()
+                //why must this be called here
+                
+                let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.userType = self.userType
+                appDelegate.login()
+            } else {
+                print("got an error")
+                print(error?.localizedDescription)
+            }
+        }
+        
     }
 }

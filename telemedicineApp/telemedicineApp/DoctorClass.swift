@@ -1,48 +1,50 @@
 //
-//  Patient.swift
+//  DoctorClass.swift
 //  telemedicineApp
 //
-//  Created by Aastha Shah on 7/27/17.
+//  Created by An Hoang on 8/1/17.
 //  Copyright © 2017 Aastha Shah. All rights reserved.
 //
 
 import Foundation
 import Parse
 
-//MARK: Aastha Shah
-class Patient: PFUser {
-    var name: String? {
-        didSet {
-            self["name"] = name
-        }
-    }
-    var sex: String? {
-        didSet {
-            self["sex"] = sex
-        }
-    }
-    var age: Int? {
-        didSet{
-            self["age"] = age
-        }
-    }
 
+class DoctorAn: Patient {
+//    var name: String? {
+//        didSet {
+//            self["name"] = name
+//        }
+//    }
+//    var sex: String? {
+//        didSet {
+//            self["sex"] = sex
+//        }
+//    }
+//    var age: Int? {
+//        didSet{
+//            self["age"] = age
+//        }
+//    }
+//    
+//    
+//    var language: String?{
+//        didSet {
+//            self["language"] = language
+//        }
+//    }
+//    
+//    var profilePicture: PFFile? {
+//        didSet {
+//            self["profilePicture"] = profilePicture
+//        }
+//    }
     
-    var language: String?{
-        didSet {
-            self["language"] = language
-        }
-    }
-    
-    var profilePicture: PFFile? {
-        didSet {
-            self["profilePicture"] = profilePicture
-        }
-    }
-    
-    var userType :UserType?{
+   
+    var doctorState: OnlineState?{
         didSet{
-            self["userType"] = userType?.rawValue
+            print(doctorState?.rawValue ?? "No state")
+            self["doctorState"] = doctorState?.rawValue
         }
     }
     
@@ -88,30 +90,20 @@ class Patient: PFUser {
             self["isOnline"] = isOnline
         }
     }
-    
-    override static func parseClassName() -> String {
-        return "_User"
-    }
-    
     override init() {
         super.init()
     }
-
-    init(name: String, sex: String, age: Int, language: String, profilePicture: PFFile) {
-        print(name)
-        print(sex)
-        print(age)
-        print(language)
-
+    
+    override init(name: String, sex: String, age: Int, language: String) {
+        super.init()
         self.name = name
         self.sex = sex
         self.age = age
         self.language = language
-
-        self.userType = .patient
-
-        self.profilePicture = profilePicture
-        super.init()
+        self.userType = .doctor
+        self.doctorState = .offline
+        
     }
+    
     
 }

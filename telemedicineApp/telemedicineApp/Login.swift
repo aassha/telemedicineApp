@@ -9,7 +9,9 @@
 import UIKit
 import Parse
 class Login: UIViewController {
-    //MARK: Aastha Shah
+   
+    var userType: UserType?
+    
     @IBOutlet weak var usernameTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -18,7 +20,17 @@ class Login: UIViewController {
     
     @IBOutlet weak var signUp: CustomButton?
     
+    
+    override func viewDidLoad() {
+        let hideKeyboardTap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardTapped))
+        hideKeyboardTap.numberOfTapsRequired = 1
+        self.view.isUserInteractionEnabled = true
+        self.view.addGestureRecognizer(hideKeyboardTap)
+    }
+   
+
     @IBOutlet weak var appIconCustomView: customImageAnimation!
+
     @IBAction func loginFunc(_ sender: Any) {
         if (usernameTextField.text?.isEmpty)! || (passwordTextField.text?.isEmpty)! {
             let missingFieldAlert = UIAlertController(title: "Missing Information", message: "Please fill all missing information", preferredStyle: UIAlertControllerStyle.alert)
@@ -35,6 +47,12 @@ class Login: UIViewController {
                 UserDefaults.standard.synchronize()
                 //what does this do?
                 let appDelegate: AppDelegate =  UIApplication.shared.delegate as! AppDelegate
+                guard let type = UserType(rawValue: PFUser.current()?.value(forKey: "userType") as! String) else {
+                    print("No userType received")
+                    return
+                }
+                print(type)
+                appDelegate.userType = type
                 appDelegate.login()
                 
             } else {
@@ -46,8 +64,40 @@ class Login: UIViewController {
         }
     }
     
-    @IBAction func signUpFunc(_ sender: Any) {
+
+    func hideKeyboardTapped(recognizer: UITapGestureRecognizer) {
+        self.view.endEditing(true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("In prepare for segue login VC")
+        print("User type in prepare for segue login VC: \(userType!)")
+        if let signUpVC: SignUpViewController = segue.destination as? SignUpViewController, let type = userType {
+            switch type{
+            case .patient: signUpVC.userType = .patient
+            case .doctor: signUpVC.userType = .doctor
+            }
+        }
+    
+    }
+    
+    @IBAction func signUpPatient(_ sender: Any) {
+         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        userType = .patient
+        appDelegate.userType = userType
+        performSegue(withIdentifier: "Log In To Sign Up", sender: nil)
+    }
+    
+    @IBAction func signUpDoctor(_ sender: Any) {
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        
+        userType = .doctor
+        appDelegate.userType = userType
+        
+        performSegue(withIdentifier: "Log In To Sign Up", sender: nil)
+    }
+
 }
 

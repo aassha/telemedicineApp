@@ -11,6 +11,7 @@ import Foundation
 protocol DocumentModelListenerProtocol{
     func documentsChanged() -> Void
 }
+
 class Document {
     var delegate: DocumentModelListenerProtocol?
     
