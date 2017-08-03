@@ -19,7 +19,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var nametxt: UITextField!
     
     @IBOutlet weak var password: UITextField!
-
+    
     @IBOutlet weak var retypePasswordtxt: UITextField!
     
     @IBOutlet weak var agetxt: UITextField!
@@ -34,7 +34,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBOutlet weak var signUpButton: CustomButton!
     @IBAction func signUpAction(_ sender: Any) {
-
+        
         guard let type = userType else{
             print("No UserType in View Controller")
             return
@@ -50,11 +50,21 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var cancelButton: CustomButton!
     
     @IBAction func cancelAction(_ sender: Any) {
-      let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+      let alertView = SCLAlertView()
+        alertView.addButton("Yes"){
+        }
+        alertView.addButton("No", action: { return})
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        alertView.showWarning("Are you sure?", subTitle: "This will erase all your information")
         appDelegate.userType = nil
         performSegue(withIdentifier: "Sign Up To Login", sender: nil)
+
+    
+        //kobidele@gmail.com
+        
+        
     }
-   
+    
     var keyboard: CGRect?
     var scrollHeight: CGFloat = 0
     
@@ -118,7 +128,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         present(selectImage, animated: true, completion: nil)
     }
     
-    //set selected image as image profile picture 
+    //set selected image as image profile picture
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         profileImage.image = info[UIImagePickerControllerEditedImage] as? UIImage
         self.dismiss(animated: true, completion: nil)
@@ -141,8 +151,16 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             self.present(passwordsDoNotMatch, animated: true, completion: nil)
         }
         
-        let profileData = UIImageJPEGRepresentation(profileImage.image!, 0.5)
-        let profileFile = PFFile(name: "profile.jpg", data: profileData!)
+        
+        guard let profileData = UIImageJPEGRepresentation(profileImage.image!, 0.5) else{
+            let missingFieldAlert = UIAlertController(title: "Missing Information", message: "Please fill all missing information", preferredStyle: UIAlertControllerStyle.alert)
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+            missingFieldAlert.addAction(ok)
+            self.present(missingFieldAlert, animated: true, completion: nil)
+            return
+        }
+        
+        let profileFile = PFFile(name: "profile.jpg", data: profileData)
         
         guard let name = nametxt.text, let sex = sextxt.text, let age =  agetxt.text, let language =  languagetxt.text, let username = usernametxt.text else{
             return
@@ -157,16 +175,16 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
         
         
-       
-            doctor?.username = usernametxt.text
-            doctor?.password = password.text
-            
-            print("About to get more info")
-            
-            performSegue(withIdentifier: "Get More Doctor Info", sender: nil)
+        doctor?.profilePicture = profileFile
+        doctor?.username = username
+        doctor?.password = password.text
+        
+        print("About to get more info")
+        
+        performSegue(withIdentifier: "Get More Doctor Info", sender: nil)
         
         
-
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -222,6 +240,6 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
                 print(error?.localizedDescription)
             }
         }
-
+        
     }
 }

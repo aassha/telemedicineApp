@@ -10,6 +10,7 @@ import UIKit
 
 class DoctorProfileVC: UIViewController {
 
+    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var stateSwitch: UISwitch!
     @IBOutlet weak var doctorNameLabel: UILabel!
     
@@ -41,15 +42,34 @@ class DoctorProfileVC: UIViewController {
     }
     
     func updateUI(){
-        doctorNameLabel.text = (DoctorAn.current()?.object(forKey: "name") as? String)!
+        guard let currentUser = DoctorAn.current() else{
+            print("no user in profile VC")
+            return
+        }
         
-        //ageLabel.text = String(describing:  (Patient.current()?.object(forKey: "age")as! Int))
-        licenseNumberLabel.text = String(describing:(DoctorAn.current()?.object(forKey: "licenseNum") as? Int))
-        specialtyLabel.text = (DoctorAn.current()?.object(forKey: "specialty") as? String)!
-        yearsOfExperienceLabel.text = String(describing:(DoctorAn.current()?.object(forKey: "numYearsPractice") as? Int))
+//        let profileImageQuery = (currentUser.object(forKey: "profileImage") as! PFFile)
+//        
+//        
+//        profileImageQuery .getDataInBackground { (data, error) -> Void in
+//            self.profileImage.image = UIImage(data: data!)
+//        }
         
-        desiredRate.text = String(describing:(DoctorAn.current()?.object(forKey: "price") as? Int))
-        phoneNumLabel.text = String(describing:(DoctorAn.current()?.object(forKey: "phoneNum") as? Int))
+        doctorNameLabel.text = (currentUser.object(forKey: "name") as! String)
+        
+        locationLabel.text = (currentUser.object(forKey: "location") as! String)
+        
+        specialtyLabel.text = (currentUser.object(forKey: "specialty") as! String)
+        
+      doctorStateLabel.text = (currentUser.object(forKey: "doctorState") as! String)
+        
+            
+        licenseNumberLabel.text = String(describing:(currentUser.object(forKey: "licenseNum") as! Int))
+        
+        yearsOfExperienceLabel.text = String(describing:(currentUser.object(forKey: "numYearsPractice") as! Int))
+        
+        desiredRate.text = String(describing:(currentUser.object(forKey: "price") as! Int))
+        phoneNumLabel.text = String(describing:(currentUser.object(forKey: "phoneNum") as! Int))
+        
         
     }
     
@@ -63,14 +83,21 @@ class DoctorProfileVC: UIViewController {
         
         if stateSwitch.isOn{
             stateSwitch.setOn(false, animated: true)
-
             currentUser["doctorState"] = "offline"
-                currentUser.saveInBackground()
         }else{
             stateSwitch.setOn(true, animated: true)
             currentUser["doctorState"] = "online"
-                currentUser.saveInBackground()
         }
+        
+        currentUser.saveInBackground { (success, error) -> Void in
+            if error == nil {
+                print("Saved in server")
+            } else {
+                print(error!)
+            }
+        }
+        print("about to update UI")
+        updateUI()
         
     }
 

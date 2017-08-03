@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F7902BE776FF3AFE3A1FFB1 /* Pods_telemedicineAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AAEC856B552CC54AC4547C /* Pods_telemedicineAppUITests.framework */; };
+		9C40357C4478384BFB26794B /* Pods_telemedicineApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779C1D88087B94DFDE668553 /* Pods_telemedicineApp.framework */; };
 		A13695B11F32A35D00354523 /* DoctorProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13695B01F32A35D00354523 /* DoctorProfileVC.swift */; };
+		A13695B31F33981A00354523 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13695B21F33981A00354523 /* SweetAlert.swift */; };
 		A138E53C1F30DF63002AC40A /* ProtocolEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A138E53B1F30DF63002AC40A /* ProtocolEnum.swift */; };
 		A138E53E1F30E75D002AC40A /* DoctorClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A138E53D1F30E75D002AC40A /* DoctorClass.swift */; };
 		A138E5401F30F5D8002AC40A /* DoctorExtraSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A138E53F1F30F5D8002AC40A /* DoctorExtraSignUpVC.swift */; };
+		A163502A1F33A6930057BC1A /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16350291F33A6930057BC1A /* SCLAlertView.swift */; };
+		CDE3B6093D127A41879838D4 /* Pods_telemedicineAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24501EA3DA3C96AD44E2F94B /* Pods_telemedicineAppTests.framework */; };
 		ED2AD6591F2D5F62008367EB /* DoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2AD6581F2D5F62008367EB /* DoctorModel.swift */; };
 		ED2AD65B1F2D66D7008367EB /* DoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2AD65A1F2D66D7008367EB /* DoctorViewController.swift */; };
 		ED500F321F2AA55900715B0C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED500F301F2AA55900715B0C /* Bolts.framework */; };
@@ -64,10 +69,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24501EA3DA3C96AD44E2F94B /* Pods_telemedicineAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_telemedicineAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		324869870B0833CA3FCEF128 /* Pods-telemedicineAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-telemedicineAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-telemedicineAppTests/Pods-telemedicineAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		6D30FFA031401C370841E983 /* Pods-telemedicineAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-telemedicineAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-telemedicineAppUITests/Pods-telemedicineAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		779C1D88087B94DFDE668553 /* Pods_telemedicineApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_telemedicineApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78B933608C094FE4C65181DC /* Pods-telemedicineApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-telemedicineApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-telemedicineApp/Pods-telemedicineApp.release.xcconfig"; sourceTree = "<group>"; };
+		7F1C4C8DE2001C7A0B937E09 /* Pods-telemedicineApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-telemedicineApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-telemedicineApp/Pods-telemedicineApp.debug.xcconfig"; sourceTree = "<group>"; };
+		82C1D96C3772064D9949B958 /* Pods-telemedicineAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-telemedicineAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-telemedicineAppTests/Pods-telemedicineAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		90AAEC856B552CC54AC4547C /* Pods_telemedicineAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_telemedicineAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13695B01F32A35D00354523 /* DoctorProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoctorProfileVC.swift; path = ../DoctorProfileVC.swift; sourceTree = "<group>"; };
+		A13695B21F33981A00354523 /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
 		A138E53B1F30DF63002AC40A /* ProtocolEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolEnum.swift; sourceTree = "<group>"; };
 		A138E53D1F30E75D002AC40A /* DoctorClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorClass.swift; sourceTree = "<group>"; };
 		A138E53F1F30F5D8002AC40A /* DoctorExtraSignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorExtraSignUpVC.swift; sourceTree = "<group>"; };
+		A16350291F33A6930057BC1A /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
+		E797C12AA0C70D808E3DA766 /* Pods-telemedicineAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-telemedicineAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-telemedicineAppUITests/Pods-telemedicineAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED2AD6581F2D5F62008367EB /* DoctorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoctorModel.swift; path = ../DoctorModel.swift; sourceTree = "<group>"; };
 		ED2AD65A1F2D66D7008367EB /* DoctorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorViewController.swift; sourceTree = "<group>"; };
 		ED500F301F2AA55900715B0C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -127,6 +143,7 @@
 				EDDCC8A61F2A8A3600EBDD1F /* libz.tbd in Frameworks */,
 				ED500F331F2AA55900715B0C /* Parse.framework in Frameworks */,
 				EDDCC8A41F2A8A0A00EBDD1F /* libsqlite3.tbd in Frameworks */,
+				9C40357C4478384BFB26794B /* Pods_telemedicineApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDE3B6093D127A41879838D4 /* Pods_telemedicineAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,12 +159,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F7902BE776FF3AFE3A1FFB1 /* Pods_telemedicineAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C977DC564223D4FE19F5122C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F1C4C8DE2001C7A0B937E09 /* Pods-telemedicineApp.debug.xcconfig */,
+				78B933608C094FE4C65181DC /* Pods-telemedicineApp.release.xcconfig */,
+				82C1D96C3772064D9949B958 /* Pods-telemedicineAppTests.debug.xcconfig */,
+				324869870B0833CA3FCEF128 /* Pods-telemedicineAppTests.release.xcconfig */,
+				E797C12AA0C70D808E3DA766 /* Pods-telemedicineAppUITests.debug.xcconfig */,
+				6D30FFA031401C370841E983 /* Pods-telemedicineAppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		ED5B558E1F26CE4800E83BDB = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +189,7 @@
 				ED500F301F2AA55900715B0C /* Bolts.framework */,
 				ED500F311F2AA55900715B0C /* Parse.framework */,
 				EDDCC8A01F2A89FF00EBDD1F /* Frameworks */,
+				C977DC564223D4FE19F5122C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -196,6 +229,8 @@
 				A138E53D1F30E75D002AC40A /* DoctorClass.swift */,
 				ED2AD65A1F2D66D7008367EB /* DoctorViewController.swift */,
 				A138E53B1F30DF63002AC40A /* ProtocolEnum.swift */,
+				A13695B21F33981A00354523 /* SweetAlert.swift */,
+				A16350291F33A6930057BC1A /* SCLAlertView.swift */,
 				ED5B55A31F26CE4900E83BDB /* LaunchScreen.storyboard */,
 			);
 			path = telemedicineApp;
@@ -233,6 +268,9 @@
 				EDDCC8A51F2A8A3600EBDD1F /* libz.tbd */,
 				EDDCC8A31F2A8A0A00EBDD1F /* libsqlite3.tbd */,
 				EDDCC8A11F2A89FF00EBDD1F /* libsqlite3.0.tbd */,
+				779C1D88087B94DFDE668553 /* Pods_telemedicineApp.framework */,
+				24501EA3DA3C96AD44E2F94B /* Pods_telemedicineAppTests.framework */,
+				90AAEC856B552CC54AC4547C /* Pods_telemedicineAppUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -244,9 +282,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED5B55BF1F26CE4900E83BDB /* Build configuration list for PBXNativeTarget "telemedicineApp" */;
 			buildPhases = (
+				3D429D4569DB239F19FCF374 /* [CP] Check Pods Manifest.lock */,
 				ED5B55931F26CE4900E83BDB /* Sources */,
 				ED5B55941F26CE4900E83BDB /* Frameworks */,
 				ED5B55951F26CE4900E83BDB /* Resources */,
+				F5B4396C8F70C69D9DE1AAE3 /* [CP] Embed Pods Frameworks */,
+				419A6F37B78BE6EEEC81BB9C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -261,9 +302,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED5B55C21F26CE4900E83BDB /* Build configuration list for PBXNativeTarget "telemedicineAppTests" */;
 			buildPhases = (
+				DF62FB9725C5B1CB0CE7770D /* [CP] Check Pods Manifest.lock */,
 				ED5B55A71F26CE4900E83BDB /* Sources */,
 				ED5B55A81F26CE4900E83BDB /* Frameworks */,
 				ED5B55A91F26CE4900E83BDB /* Resources */,
+				7CB77AC130605DD6D53C1080 /* [CP] Embed Pods Frameworks */,
+				293493F9D30EAB5FC78F06EB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -279,9 +323,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED5B55C51F26CE4900E83BDB /* Build configuration list for PBXNativeTarget "telemedicineAppUITests" */;
 			buildPhases = (
+				6586194606B1FBD5A70017B6 /* [CP] Check Pods Manifest.lock */,
 				ED5B55B21F26CE4900E83BDB /* Sources */,
 				ED5B55B31F26CE4900E83BDB /* Frameworks */,
 				ED5B55B41F26CE4900E83BDB /* Resources */,
+				0BAD0ED22D17E4E2337FFDBE /* [CP] Embed Pods Frameworks */,
+				98B718ED854DBF2231119DE9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -369,6 +416,144 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0BAD0ED22D17E4E2337FFDBE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-telemedicineAppUITests/Pods-telemedicineAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		293493F9D30EAB5FC78F06EB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-telemedicineAppTests/Pods-telemedicineAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3D429D4569DB239F19FCF374 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		419A6F37B78BE6EEEC81BB9C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-telemedicineApp/Pods-telemedicineApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6586194606B1FBD5A70017B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7CB77AC130605DD6D53C1080 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-telemedicineAppTests/Pods-telemedicineAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98B718ED854DBF2231119DE9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-telemedicineAppUITests/Pods-telemedicineAppUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF62FB9725C5B1CB0CE7770D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F5B4396C8F70C69D9DE1AAE3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-telemedicineApp/Pods-telemedicineApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ED5B55931F26CE4900E83BDB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -379,6 +564,7 @@
 				EDDCC89D1F2A7AE300EBDD1F /* SignUpViewController.swift in Sources */,
 				EDDCC8931F26E72900EBDD1F /* RoundImageView.swift in Sources */,
 				A138E5401F30F5D8002AC40A /* DoctorExtraSignUpVC.swift in Sources */,
+				A13695B31F33981A00354523 /* SweetAlert.swift in Sources */,
 				A13695B11F32A35D00354523 /* DoctorProfileVC.swift in Sources */,
 				EDDCC89B1F29606500EBDD1F /* DocumentEditorVC.swift in Sources */,
 				A138E53E1F30E75D002AC40A /* DoctorClass.swift in Sources */,
@@ -393,6 +579,7 @@
 				ED2AD6591F2D5F62008367EB /* DoctorModel.swift in Sources */,
 				ED500F351F2AB91D00715B0C /* ProfileViewController.swift in Sources */,
 				EDDCC88B1F26DBF500EBDD1F /* CustomButton.swift in Sources */,
+				A163502A1F33A6930057BC1A /* SCLAlertView.swift in Sources */,
 				EDDCC88D1F26DEAF00EBDD1F /* Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,6 +730,7 @@
 		};
 		ED5B55C01F26CE4900E83BDB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F1C4C8DE2001C7A0B937E09 /* Pods-telemedicineApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UY5EJ29PEW;
@@ -561,6 +749,7 @@
 		};
 		ED5B55C11F26CE4900E83BDB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78B933608C094FE4C65181DC /* Pods-telemedicineApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UY5EJ29PEW;
@@ -579,6 +768,7 @@
 		};
 		ED5B55C31F26CE4900E83BDB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82C1D96C3772064D9949B958 /* Pods-telemedicineAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -594,6 +784,7 @@
 		};
 		ED5B55C41F26CE4900E83BDB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 324869870B0833CA3FCEF128 /* Pods-telemedicineAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -609,6 +800,7 @@
 		};
 		ED5B55C61F26CE4900E83BDB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E797C12AA0C70D808E3DA766 /* Pods-telemedicineAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = RV9F4327PU;
@@ -627,6 +819,7 @@
 		};
 		ED5B55C71F26CE4900E83BDB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D30FFA031401C370841E983 /* Pods-telemedicineAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = RV9F4327PU;

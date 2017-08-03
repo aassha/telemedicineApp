@@ -50,8 +50,9 @@ class DoctorExtraSignUpVC: UIViewController {
             newDoctor.phoneNum = Int(phoneNum)
             newDoctor.location = location
             
+            
             let state = newDoctor.doctorState?.rawValue
-            newDoctor["state"] = state
+            newDoctor["doctorState"] = state
             
             
             newDoctor.signUpInBackground { (success, error) in

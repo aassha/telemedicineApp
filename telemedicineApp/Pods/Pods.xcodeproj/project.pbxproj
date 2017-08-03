@@ -1,0 +1,869 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05B2EC7B29D9B6C3A2CFB9931F759E3E /* Pods-telemedicineAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBF3758051E410C12E9EE38A64B44A6 /* Pods-telemedicineAppTests-dummy.m */; };
+		0FDE138535ACF62922B1BE4FC568D090 /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79976012D991BBCB570D7574B6552363 /* SCLExtensions.swift */; };
+		1DD88949A01F22DA1C25226BFE8E1F34 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C12624AB36573B17A345B5C28FFE /* SCLAlertView.swift */; };
+		38E5FF487E5B233FE3DF8CA557DFE98B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		414750F363046C2EBFF3AFA13C7BA13A /* Pods-telemedicineApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A59521AFAC8817377BA275C507C3F171 /* Pods-telemedicineApp-dummy.m */; };
+		63825BF8E344A44F5EA0680D6E687B83 /* SCLAlertView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 780E9115DC64E18BDE0435285E9D4F4D /* SCLAlertView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77140D22D009737E99BD5FA05F6A5F7E /* Pods-telemedicineAppUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2C9D599628B716D7CE667A8606A1E /* Pods-telemedicineAppUITests-dummy.m */; };
+		7E1391973B872B170A538961BCDAE369 /* SCLAlertView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D826BF6AA60C0C13D9E2DD5CE5604CD4 /* SCLAlertView-dummy.m */; };
+		8550A82534EF5F3D3024F3B89ADF90D3 /* Pods-telemedicineApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C1F442CD854155B932E3B96614DA0396 /* Pods-telemedicineApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8CF3E433CC6C838B566CB82C90AD37F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		97FF59B6DAFD61AAE8523A40BC00CEB0 /* Pods-telemedicineAppTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CC6FDED8566B2341629B3D9C0091245 /* Pods-telemedicineAppTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B9A4E7538535102442296A4F9AFD175 /* Pods-telemedicineAppUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EA09A1DF08D4127C4AE5AD99E92EA07 /* Pods-telemedicineAppUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5E2858992FA13E5CEB2585E6FCD90AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		BD8E681A33876C611C940C1A99C20313 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		46A76FBB7279DF59A678355DAAA932A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F5E3A83C8340D1514A0DA91EC55769E;
+			remoteInfo = SCLAlertView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02BC3AD28B194CF4120D8B2EBFA4EE4E /* Pods-telemedicineApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-telemedicineApp-frameworks.sh"; sourceTree = "<group>"; };
+		18DA4035587B16C18BA510E9CBEA4D51 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18DCC1E604747262CDB5A67A90886EA3 /* Pods-telemedicineAppUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-telemedicineAppUITests-frameworks.sh"; sourceTree = "<group>"; };
+		367EDA44AD21962A915CB738EBA46181 /* Pods-telemedicineAppUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-telemedicineAppUITests-resources.sh"; sourceTree = "<group>"; };
+		3DF5CA6913ABEF5C265093AFA3D1A4E3 /* Pods_telemedicineApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_telemedicineApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EA09A1DF08D4127C4AE5AD99E92EA07 /* Pods-telemedicineAppUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-telemedicineAppUITests-umbrella.h"; sourceTree = "<group>"; };
+		460B1596665A248DAAFDD4E15FEAC4F5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A915754953BDE3FBECB5447865A4567 /* SCLAlertView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SCLAlertView.xcconfig; sourceTree = "<group>"; };
+		53D7C12624AB36573B17A345B5C28FFE /* SCLAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCLAlertView.swift; path = SCLAlertView/SCLAlertView.swift; sourceTree = "<group>"; };
+		57C111E77AEC41C7CDC588311BDEF26F /* Pods_telemedicineAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_telemedicineAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B8ED2B1F9CDF4EE3CCE729944343F07 /* Pods-telemedicineApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-telemedicineApp.debug.xcconfig"; sourceTree = "<group>"; };
+		5C66DBBEB31BDDD3C3F7653CA9F3B388 /* Pods-telemedicineAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-telemedicineAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6417ADBEA01E5D27870375B7395C318E /* Pods-telemedicineApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-telemedicineApp.release.xcconfig"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		669CF2EC571273D0118CC30DAF107CBE /* Pods-telemedicineApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-telemedicineApp.modulemap"; sourceTree = "<group>"; };
+		6CC6FDED8566B2341629B3D9C0091245 /* Pods-telemedicineAppTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-telemedicineAppTests-umbrella.h"; sourceTree = "<group>"; };
+		71FB76CD304080D247AA0E2430F2C0BD /* Pods-telemedicineApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-telemedicineApp-resources.sh"; sourceTree = "<group>"; };
+		73F09469EF139699363B44128C6B1933 /* SCLAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SCLAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		780E9115DC64E18BDE0435285E9D4F4D /* SCLAlertView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCLAlertView-umbrella.h"; sourceTree = "<group>"; };
+		79976012D991BBCB570D7574B6552363 /* SCLExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCLExtensions.swift; path = SCLAlertView/SCLExtensions.swift; sourceTree = "<group>"; };
+		7AB2C9D599628B716D7CE667A8606A1E /* Pods-telemedicineAppUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-telemedicineAppUITests-dummy.m"; sourceTree = "<group>"; };
+		83884DD36C5DFE825F26BADF1CDDDAB7 /* Pods-telemedicineAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-telemedicineAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8B14D6D6F1CF4443FB8644005B61C888 /* Pods_telemedicineAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_telemedicineAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A24A1CE757D59E8BF60D3FCBC267FBC5 /* Pods-telemedicineAppTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-telemedicineAppTests.modulemap"; sourceTree = "<group>"; };
+		A59521AFAC8817377BA275C507C3F171 /* Pods-telemedicineApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-telemedicineApp-dummy.m"; sourceTree = "<group>"; };
+		AEA568DCDC70D6C814A2BB2C4D4AEFA9 /* Pods-telemedicineAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-telemedicineAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B17F782DCAD0BF81D16957976DECFD61 /* Pods-telemedicineAppUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-telemedicineAppUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B89F6D86F4F2E1DA230BC83268286F54 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1F442CD854155B932E3B96614DA0396 /* Pods-telemedicineApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-telemedicineApp-umbrella.h"; sourceTree = "<group>"; };
+		CEBF3758051E410C12E9EE38A64B44A6 /* Pods-telemedicineAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-telemedicineAppTests-dummy.m"; sourceTree = "<group>"; };
+		D29956B09432DED3961F64507B33E68F /* Pods-telemedicineAppUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-telemedicineAppUITests.modulemap"; sourceTree = "<group>"; };
+		D519DAED4F6AF087083CC849F427AD69 /* Pods-telemedicineApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-telemedicineApp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D72E83120B8657B8249A8565F75882B7 /* Pods-telemedicineAppUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-telemedicineAppUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		D826BF6AA60C0C13D9E2DD5CE5604CD4 /* SCLAlertView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SCLAlertView-dummy.m"; sourceTree = "<group>"; };
+		D92BDA3D049DB289DD7ECA77942715C2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E21F3EFB1592A9939D3794C1662263A2 /* Pods-telemedicineApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-telemedicineApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		E5E7D8BBAE4B82C66E4629CA16CAA349 /* Pods-telemedicineAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-telemedicineAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		E80F46A2BDF97A131CBEF0078B8C246C /* Pods-telemedicineAppTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-telemedicineAppTests-resources.sh"; sourceTree = "<group>"; };
+		EA04C7B7477930A901DB56E1061843D0 /* Pods-telemedicineAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-telemedicineAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		ED09B8D16E50B7F2DAED9CF350FEF481 /* SCLAlertView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SCLAlertView.modulemap; sourceTree = "<group>"; };
+		F497285F7F863AD2BAA1430AB6172BE4 /* Pods-telemedicineAppTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-telemedicineAppTests-frameworks.sh"; sourceTree = "<group>"; };
+		F7AF306D2AAF90D6D06E15543364D4C7 /* SCLAlertView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCLAlertView-prefix.pch"; sourceTree = "<group>"; };
+		FE045177F67B7436B79700B211B8336A /* Pods-telemedicineAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-telemedicineAppTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A0093706A35A606D26C47013D4752FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5E2858992FA13E5CEB2585E6FCD90AE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E9C9E51AA05E33E6679E412968AFAED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD8E681A33876C611C940C1A99C20313 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7F01DBFAFBD53EBB0D59F7845F34F90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CF3E433CC6C838B566CB82C90AD37F0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4112FF5AAE07B5100CA2C91AC8068B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38E5FF487E5B233FE3DF8CA557DFE98B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00B6F4ABBD747EC6147427D99760455E /* Pods-telemedicineAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D92BDA3D049DB289DD7ECA77942715C2 /* Info.plist */,
+				D29956B09432DED3961F64507B33E68F /* Pods-telemedicineAppUITests.modulemap */,
+				B17F782DCAD0BF81D16957976DECFD61 /* Pods-telemedicineAppUITests-acknowledgements.markdown */,
+				D72E83120B8657B8249A8565F75882B7 /* Pods-telemedicineAppUITests-acknowledgements.plist */,
+				7AB2C9D599628B716D7CE667A8606A1E /* Pods-telemedicineAppUITests-dummy.m */,
+				18DCC1E604747262CDB5A67A90886EA3 /* Pods-telemedicineAppUITests-frameworks.sh */,
+				367EDA44AD21962A915CB738EBA46181 /* Pods-telemedicineAppUITests-resources.sh */,
+				3EA09A1DF08D4127C4AE5AD99E92EA07 /* Pods-telemedicineAppUITests-umbrella.h */,
+				EA04C7B7477930A901DB56E1061843D0 /* Pods-telemedicineAppUITests.debug.xcconfig */,
+				5C66DBBEB31BDDD3C3F7653CA9F3B388 /* Pods-telemedicineAppUITests.release.xcconfig */,
+			);
+			name = "Pods-telemedicineAppUITests";
+			path = "Target Support Files/Pods-telemedicineAppUITests";
+			sourceTree = "<group>";
+		};
+		1678F945302185E8AB322293782D3E75 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3DF5CA6913ABEF5C265093AFA3D1A4E3 /* Pods_telemedicineApp.framework */,
+				57C111E77AEC41C7CDC588311BDEF26F /* Pods_telemedicineAppTests.framework */,
+				8B14D6D6F1CF4443FB8644005B61C888 /* Pods_telemedicineAppUITests.framework */,
+				73F09469EF139699363B44128C6B1933 /* SCLAlertView.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		21236440975E0D8924F5FBFD0C9D1478 /* SCLAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				53D7C12624AB36573B17A345B5C28FFE /* SCLAlertView.swift */,
+				79976012D991BBCB570D7574B6552363 /* SCLExtensions.swift */,
+				42753F0DBF438AAF17062729B2173DED /* Support Files */,
+			);
+			path = SCLAlertView;
+			sourceTree = "<group>";
+		};
+		42753F0DBF438AAF17062729B2173DED /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				18DA4035587B16C18BA510E9CBEA4D51 /* Info.plist */,
+				ED09B8D16E50B7F2DAED9CF350FEF481 /* SCLAlertView.modulemap */,
+				4A915754953BDE3FBECB5447865A4567 /* SCLAlertView.xcconfig */,
+				D826BF6AA60C0C13D9E2DD5CE5604CD4 /* SCLAlertView-dummy.m */,
+				F7AF306D2AAF90D6D06E15543364D4C7 /* SCLAlertView-prefix.pch */,
+				780E9115DC64E18BDE0435285E9D4F4D /* SCLAlertView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SCLAlertView";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				CE1D7C96A3A3C0CED68FBC36DB57C4C4 /* Pods */,
+				1678F945302185E8AB322293782D3E75 /* Products */,
+				7DC9C8138C3ECF8CF759B3DF1B7E4DC9 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7DC9C8138C3ECF8CF759B3DF1B7E4DC9 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B63D031DBA6B290B0F94B8111A5CA2BB /* Pods-telemedicineApp */,
+				BAFDE67B8907E7BD5F2953D84FD55B42 /* Pods-telemedicineAppTests */,
+				00B6F4ABBD747EC6147427D99760455E /* Pods-telemedicineAppUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		B63D031DBA6B290B0F94B8111A5CA2BB /* Pods-telemedicineApp */ = {
+			isa = PBXGroup;
+			children = (
+				460B1596665A248DAAFDD4E15FEAC4F5 /* Info.plist */,
+				669CF2EC571273D0118CC30DAF107CBE /* Pods-telemedicineApp.modulemap */,
+				D519DAED4F6AF087083CC849F427AD69 /* Pods-telemedicineApp-acknowledgements.markdown */,
+				E21F3EFB1592A9939D3794C1662263A2 /* Pods-telemedicineApp-acknowledgements.plist */,
+				A59521AFAC8817377BA275C507C3F171 /* Pods-telemedicineApp-dummy.m */,
+				02BC3AD28B194CF4120D8B2EBFA4EE4E /* Pods-telemedicineApp-frameworks.sh */,
+				71FB76CD304080D247AA0E2430F2C0BD /* Pods-telemedicineApp-resources.sh */,
+				C1F442CD854155B932E3B96614DA0396 /* Pods-telemedicineApp-umbrella.h */,
+				5B8ED2B1F9CDF4EE3CCE729944343F07 /* Pods-telemedicineApp.debug.xcconfig */,
+				6417ADBEA01E5D27870375B7395C318E /* Pods-telemedicineApp.release.xcconfig */,
+			);
+			name = "Pods-telemedicineApp";
+			path = "Target Support Files/Pods-telemedicineApp";
+			sourceTree = "<group>";
+		};
+		BAFDE67B8907E7BD5F2953D84FD55B42 /* Pods-telemedicineAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				B89F6D86F4F2E1DA230BC83268286F54 /* Info.plist */,
+				A24A1CE757D59E8BF60D3FCBC267FBC5 /* Pods-telemedicineAppTests.modulemap */,
+				83884DD36C5DFE825F26BADF1CDDDAB7 /* Pods-telemedicineAppTests-acknowledgements.markdown */,
+				E5E7D8BBAE4B82C66E4629CA16CAA349 /* Pods-telemedicineAppTests-acknowledgements.plist */,
+				CEBF3758051E410C12E9EE38A64B44A6 /* Pods-telemedicineAppTests-dummy.m */,
+				F497285F7F863AD2BAA1430AB6172BE4 /* Pods-telemedicineAppTests-frameworks.sh */,
+				E80F46A2BDF97A131CBEF0078B8C246C /* Pods-telemedicineAppTests-resources.sh */,
+				6CC6FDED8566B2341629B3D9C0091245 /* Pods-telemedicineAppTests-umbrella.h */,
+				AEA568DCDC70D6C814A2BB2C4D4AEFA9 /* Pods-telemedicineAppTests.debug.xcconfig */,
+				FE045177F67B7436B79700B211B8336A /* Pods-telemedicineAppTests.release.xcconfig */,
+			);
+			name = "Pods-telemedicineAppTests";
+			path = "Target Support Files/Pods-telemedicineAppTests";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE1D7C96A3A3C0CED68FBC36DB57C4C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				21236440975E0D8924F5FBFD0C9D1478 /* SCLAlertView */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0FD32D7C5965EDB94461F1A20B418E3D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B9A4E7538535102442296A4F9AFD175 /* Pods-telemedicineAppUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47963F7EA8EC3C263906EE1F27D62F80 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97FF59B6DAFD61AAE8523A40BC00CEB0 /* Pods-telemedicineAppTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA84352A5C351AF0704E5D9E247620D2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63825BF8E344A44F5EA0680D6E687B83 /* SCLAlertView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1485294BCC3F36B501CECBA49ACB31E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8550A82534EF5F3D3024F3B89ADF90D3 /* Pods-telemedicineApp-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		08655009BE21B6A464176461F9AA8EC5 /* Pods-telemedicineApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3E21462378BB29C6FAEF5D0F23411C1 /* Build configuration list for PBXNativeTarget "Pods-telemedicineApp" */;
+			buildPhases = (
+				AE6870E705D9D5BDD26C3D9D095EF8BA /* Sources */,
+				4E9C9E51AA05E33E6679E412968AFAED /* Frameworks */,
+				F1485294BCC3F36B501CECBA49ACB31E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB95F867B6D08E187C215C4C2A084337 /* PBXTargetDependency */,
+			);
+			name = "Pods-telemedicineApp";
+			productName = "Pods-telemedicineApp";
+			productReference = 3DF5CA6913ABEF5C265093AFA3D1A4E3 /* Pods_telemedicineApp.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1B3C8059D771AD8A92B544BD53D6DF23 /* Pods-telemedicineAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D8113722287C8E50879EA3E89A21DE4 /* Build configuration list for PBXNativeTarget "Pods-telemedicineAppTests" */;
+			buildPhases = (
+				BCC80BC0AF27832AF9AA3EDEE4DC14D2 /* Sources */,
+				D4112FF5AAE07B5100CA2C91AC8068B7 /* Frameworks */,
+				47963F7EA8EC3C263906EE1F27D62F80 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-telemedicineAppTests";
+			productName = "Pods-telemedicineAppTests";
+			productReference = 57C111E77AEC41C7CDC588311BDEF26F /* Pods_telemedicineAppTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8F5E3A83C8340D1514A0DA91EC55769E /* SCLAlertView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1BFFEF84EE9FAC3EB995A40126D3865 /* Build configuration list for PBXNativeTarget "SCLAlertView" */;
+			buildPhases = (
+				1699165A76D8200F64A91B3151580475 /* Sources */,
+				1A0093706A35A606D26C47013D4752FC /* Frameworks */,
+				AA84352A5C351AF0704E5D9E247620D2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SCLAlertView;
+			productName = SCLAlertView;
+			productReference = 73F09469EF139699363B44128C6B1933 /* SCLAlertView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ED50B91A6E50F5B22E023ADB935758C5 /* Pods-telemedicineAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44635071B85A550394FEB783C5FB1115 /* Build configuration list for PBXNativeTarget "Pods-telemedicineAppUITests" */;
+			buildPhases = (
+				AD92130155B30522756496DD95472745 /* Sources */,
+				C7F01DBFAFBD53EBB0D59F7845F34F90 /* Frameworks */,
+				0FD32D7C5965EDB94461F1A20B418E3D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-telemedicineAppUITests";
+			productName = "Pods-telemedicineAppUITests";
+			productReference = 8B14D6D6F1CF4443FB8644005B61C888 /* Pods_telemedicineAppUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 1678F945302185E8AB322293782D3E75 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				08655009BE21B6A464176461F9AA8EC5 /* Pods-telemedicineApp */,
+				1B3C8059D771AD8A92B544BD53D6DF23 /* Pods-telemedicineAppTests */,
+				ED50B91A6E50F5B22E023ADB935758C5 /* Pods-telemedicineAppUITests */,
+				8F5E3A83C8340D1514A0DA91EC55769E /* SCLAlertView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1699165A76D8200F64A91B3151580475 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E1391973B872B170A538961BCDAE369 /* SCLAlertView-dummy.m in Sources */,
+				1DD88949A01F22DA1C25226BFE8E1F34 /* SCLAlertView.swift in Sources */,
+				0FDE138535ACF62922B1BE4FC568D090 /* SCLExtensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD92130155B30522756496DD95472745 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77140D22D009737E99BD5FA05F6A5F7E /* Pods-telemedicineAppUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE6870E705D9D5BDD26C3D9D095EF8BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				414750F363046C2EBFF3AFA13C7BA13A /* Pods-telemedicineApp-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCC80BC0AF27832AF9AA3EDEE4DC14D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05B2EC7B29D9B6C3A2CFB9931F759E3E /* Pods-telemedicineAppTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AB95F867B6D08E187C215C4C2A084337 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCLAlertView;
+			target = 8F5E3A83C8340D1514A0DA91EC55769E /* SCLAlertView */;
+			targetProxy = 46A76FBB7279DF59A678355DAAA932A5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4E487F173E6C9664F4E9E26B9635D23C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		69898EA59DFAC55B67414E7488A4B79F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A915754953BDE3FBECB5447865A4567 /* SCLAlertView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SCLAlertView/SCLAlertView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SCLAlertView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SCLAlertView/SCLAlertView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SCLAlertView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9DB626DE6D4C3F54B2973F9ACDD56A96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA04C7B7477930A901DB56E1061843D0 /* Pods-telemedicineAppUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-telemedicineAppUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-telemedicineAppUITests/Pods-telemedicineAppUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_telemedicineAppUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A775649963EC1E61A09B02E7C105CCCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C66DBBEB31BDDD3C3F7653CA9F3B388 /* Pods-telemedicineAppUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-telemedicineAppUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-telemedicineAppUITests/Pods-telemedicineAppUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_telemedicineAppUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A8A4756D1A348BD060D8BB0312812DAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A915754953BDE3FBECB5447865A4567 /* SCLAlertView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SCLAlertView/SCLAlertView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SCLAlertView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SCLAlertView/SCLAlertView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SCLAlertView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ACED26C519C8187192BB84082DF8E854 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B8ED2B1F9CDF4EE3CCE729944343F07 /* Pods-telemedicineApp.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-telemedicineApp/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-telemedicineApp/Pods-telemedicineApp.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_telemedicineApp;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B062DAEB1C728CEB53FCDE03CDDAE162 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEA568DCDC70D6C814A2BB2C4D4AEFA9 /* Pods-telemedicineAppTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-telemedicineAppTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-telemedicineAppTests/Pods-telemedicineAppTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_telemedicineAppTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BDD0139D6EB93FA375F887ABD62DAB2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C9D09BD0D76A0BAF4681470C7C140B38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6417ADBEA01E5D27870375B7395C318E /* Pods-telemedicineApp.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-telemedicineApp/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-telemedicineApp/Pods-telemedicineApp.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_telemedicineApp;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DDC58B602F0CA2E248E42C61AF8440B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE045177F67B7436B79700B211B8336A /* Pods-telemedicineAppTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-telemedicineAppTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-telemedicineAppTests/Pods-telemedicineAppTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_telemedicineAppTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E487F173E6C9664F4E9E26B9635D23C /* Debug */,
+				BDD0139D6EB93FA375F887ABD62DAB2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44635071B85A550394FEB783C5FB1115 /* Build configuration list for PBXNativeTarget "Pods-telemedicineAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DB626DE6D4C3F54B2973F9ACDD56A96 /* Debug */,
+				A775649963EC1E61A09B02E7C105CCCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D8113722287C8E50879EA3E89A21DE4 /* Build configuration list for PBXNativeTarget "Pods-telemedicineAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B062DAEB1C728CEB53FCDE03CDDAE162 /* Debug */,
+				DDC58B602F0CA2E248E42C61AF8440B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1BFFEF84EE9FAC3EB995A40126D3865 /* Build configuration list for PBXNativeTarget "SCLAlertView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8A4756D1A348BD060D8BB0312812DAC /* Debug */,
+				69898EA59DFAC55B67414E7488A4B79F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3E21462378BB29C6FAEF5D0F23411C1 /* Build configuration list for PBXNativeTarget "Pods-telemedicineApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACED26C519C8187192BB84082DF8E854 /* Debug */,
+				C9D09BD0D76A0BAF4681470C7C140B38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

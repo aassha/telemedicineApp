@@ -1,0 +1,6 @@
+framework module Pods_telemedicineAppUITests {
+  umbrella header "Pods-telemedicineAppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
