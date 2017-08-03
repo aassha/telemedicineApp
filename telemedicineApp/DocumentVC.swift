@@ -67,7 +67,6 @@ class DocumentVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let editorVC: DocumentEditorVC = segue.destination as? DocumentEditorVC {
-            let cellArray = documentCollection.indexPathsForSelectedItems
             //how to get index of selected cell
             guard let selectedCell = tappedCell else{
                 return

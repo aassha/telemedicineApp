@@ -18,6 +18,7 @@ class Login: UIViewController {
     
     @IBOutlet weak var signUp: CustomButton?
     
+    @IBOutlet weak var appIconCustomView: customImageAnimation!
     @IBAction func loginFunc(_ sender: Any) {
         if (usernameTextField.text?.isEmpty)! || (passwordTextField.text?.isEmpty)! {
             let missingFieldAlert = UIAlertController(title: "Missing Information", message: "Please fill all missing information", preferredStyle: UIAlertControllerStyle.alert)
@@ -29,12 +30,11 @@ class Login: UIViewController {
         PFUser.logInWithUsername(inBackground: usernameTextField.text!, password: passwordTextField.text!) { (user: PFUser?, error: Error?) in
             if error == nil {
                 //saves the username is memory
+                //SOURCE: https://www.udemy.com/create-instagram-swift-xcode/learn/v4/content
                 UserDefaults.standard.set(user!.username, forKey: "username")
                 UserDefaults.standard.synchronize()
                 //what does this do?
                 let appDelegate: AppDelegate =  UIApplication.shared.delegate as! AppDelegate
-                
-                
                 appDelegate.login()
                 
             } else {

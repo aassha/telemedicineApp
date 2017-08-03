@@ -7,6 +7,7 @@
 //
 //MARK:Aastha Shah
 import UIKit
+import Parse
 class customCell: UICollectionViewCell{
     
     @IBOutlet weak var imageProfile: UIImageView!
@@ -18,42 +19,105 @@ class DoctorViewController: UIViewController,UICollectionViewDelegate, UICollect
     @IBOutlet weak var doctorCollection: UICollectionView!
     var array: [Any] = []
     var tappedCell: Int?
-    var doctorsArray: [Doctor]?
+    var doctorsArray: [DoctorAn]?
+    var specialty:String?
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let array = doctorsArray else{
+        NSLog("Enter cV delegate")
+        // if objects are not returned
+        //then return 0
+        //eslse self.doctorsArray.count
+        if doctorsArray == nil {
+            NSLog("Array is nil")
             return 0
         }
-        return array.count
+        
+        NSLog("Array is not nil")
+          return self.doctorsArray!.count
     }
+    
+//    override func viewDidLoad() {
+//        var query = PFUser.query()
+//        query?.whereKey("userState", contains: "doctor")
+//        do {
+//            let doctors: [PFObject] = try query!.findObjects()
+//            print(doctors)
+//        } catch {
+//            print(error)
+//        }
+//    }
+    
+    override func viewDidLoad() {
+        NSLog("Enter vDL")
+        self.getDoctors()
+        NSLog("Exiting vDL")
+        
+    }
+    
+    func getDoctors() {
+        var x: Int?
+        // x nil
+        x = 4
+        var c: UIViewController?
+        // c nil
+        c = UIViewController()
+        
+        NSLog("Enter getDoctor")
+        let doctorQuery = PFUser.query()
+        doctorQuery?.whereKey("userType", equalTo: "doctor")
+        doctorQuery?.whereKey("specialty",equalTo: self.specialty!)
+        doctorQuery?.includeKey("specialty")
+        doctorQuery?.includeKey("doctorState")
+        doctorQuery?.findObjectsInBackground(block: { (objects, error:Error?) in
+            NSLog("Entering result closure:\(Thread.isMainThread)")
+            let doctorInfo = objects as? [PFUser]
+            self.doctorsArray = Array() // []
+            for doc in doctorInfo!{
+                let doctorAn = DoctorAn()
+                doctorAn.doctor = doc
+                doctorAn.specialty = doc["specialty"] as? String
+                self.doctorsArray?.append(doctorAn)
+                print(doctorAn)
+            }
+            NSLog("About to reload data")
+            self.doctorCollection.reloadData()
+            NSLog("Exiting result closure")
+        })
+        NSLog("Exiting getDoctors()")
+      
+    }
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+   
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
         guard let array = doctorsArray else {
             return UICollectionViewCell()
         }
-        if array[indexPath.row].state == .online {
+        if array[indexPath.row].doctorState == "online" {
         let cell = doctorCollection.dequeueReusableCell(withReuseIdentifier: "cellOnline", for: indexPath) as! customCell
         //cell.imageProfile.image = UIImage(named: doctorSpecialties.specialties[indexPath.row] + ".PNG")
         cell.nameLabel.text = array[indexPath.row].name
-        //cell.priceLabel.text = doctorsArray?[indexPath.row]
-            //doctorSpecialties.specialties[indexPath.row]
+        cell.priceLabel.text = String(describing: array[indexPath.row].price)
         return cell
         }
         
-        if array[indexPath.row].state == .offline {
+        if array[indexPath.row].doctorState == "offline" {
             let cell = doctorCollection.dequeueReusableCell(withReuseIdentifier: "cellOffline", for: indexPath) as! customCell
             //cell.imageProfile.image = UIImage(named: doctorSpecialties.specialties[indexPath.row] + ".PNG")
             cell.nameLabel.text = array[indexPath.row].name
-            //cell.priceLabel.text = doctorsArray?[indexPath.row]
-            //doctorSpecialties.specialties[indexPath.row]
+            cell.priceLabel.text = String(describing: array[indexPath.row].price)
             return cell
         }
         let cell = doctorCollection.dequeueReusableCell(withReuseIdentifier: "cellOnline", for: indexPath) as! customCell
         //cell.imageProfile.image = UIImage(named: doctorSpecialties.specialties[indexPath.row] + ".PNG")
         cell.nameLabel.text = array[indexPath.row].name
-        //cell.priceLabel.text = doctorsArray?[indexPath.row]
-        //doctorSpecialties.specialties[indexPath.row]
+        cell.priceLabel.text = String(describing: array[indexPath.row].price)
         return cell
     }
     
@@ -72,11 +136,11 @@ class DoctorViewController: UIViewController,UICollectionViewDelegate, UICollect
         if let doctorProfile = segue.destination as? DoctorProfileViewController {
             doctorProfile.doctorNameVar = array[selectedCell].name!
 //           doctorProfile.price = array[selectedCell].price!
-            doctorProfile.language = array[selectedCell].language!
-            doctorProfile.specialty = array[selectedCell].specialty!.rawValue
-            doctorProfile.location = array[selectedCell].location!
-            //doctorProfile.experience = array[selectedCell].numYearsPractice!
-            doctorProfile.state = array[selectedCell].state.rawValue
+//            doctorProfile.language = array[selectedCell].language!
+//            doctorProfile.specialty = array[selectedCell].specialty
+//            doctorProfile.location = array[selectedCell].location!
+//            //doctorProfile.experience = array[selectedCell].numYearsPractice!
+//            doctorProfile.state = array[selectedCell].doctorState
 
         }
     }

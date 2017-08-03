@@ -39,7 +39,6 @@ class DoctorModel {
         Doctor(name: "Shah", specialty: .pediatrics, price: 100, language: "English", state: .online, location: "USA", numYearsPractice: 5)]
     
     func getNumberofDoctorsInEachSpecialty(specialty:Specialty) -> [Doctor] {
-        //SOURCE: https://stackoverflow.com/questions/40804458/how-to-filter-an-array-of-structs-with-value-of-other-array-in-swift
         return doctorsArray.filter({$0.specialty == specialty})
     }
     

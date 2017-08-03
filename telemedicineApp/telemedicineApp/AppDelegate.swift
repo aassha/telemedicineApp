@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        //SOURCE: https://www.udemy.com/create-instagram-swift-xcode/learn/v4/content
         Parse.enableLocalDatastore()
         let parseConfig = ParseClientConfiguration{(ParseMutableClientConfiguration) in
             //accessing Heroku vio id and keys
@@ -55,6 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func login() {
         //remember user login
+        //SOURCE: https://www.udemy.com/create-instagram-swift-xcode/learn/v4/content
         let name: String? = UserDefaults.standard.string(forKey: "username")
         
         if name != nil {
