@@ -20,7 +20,10 @@ class DocumentVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     var tappedCell: Int?
     @IBOutlet weak var documentCollection: UICollectionView!
     
-    
+    override func viewDidLoad() {
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addDocument))
+        self.navigationItem.rightBarButtonItem = addButton
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return documentsModel.documents.count
@@ -52,7 +55,7 @@ class DocumentVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         documentsModel.textChanged()
     }
     
-    @IBAction func addDocument(_ sender: Any) {
+    func addDocument(_ sender: Any) {
         documentsModel.addDocument(medicineName: "Medicine Name", notes: "Additional Notes")
         let indexPath = IndexPath(row:(documentsModel.documents.count)-1, section:0)
         documentCollection.insertItems(at: [indexPath])
@@ -73,8 +76,8 @@ class DocumentVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             editorVC.medicineNameText = documentsModel.documents[selectedCell].medicineName
             editorVC.notesText = documentsModel.documents[selectedCell].notes
         }
-        
     }
+
 }
 
     

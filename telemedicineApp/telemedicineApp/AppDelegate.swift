@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         Parse.initialize(with: parseConfig)
         Patient.registerSubclass()
-        //login()
+        login()
         return true
     }
 
@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func login() {
         //remember user login
-        let name: String? = UserDefaults.standard.string(forKey: "name")
+        let name: String? = UserDefaults.standard.string(forKey: "username")
         
         if name != nil {
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

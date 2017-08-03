@@ -9,7 +9,7 @@
 import Foundation
 import Parse
 
-
+//MARK: Aastha Shah
 class Patient: PFUser {
     var name: String? {
         didSet {
@@ -44,7 +44,7 @@ class Patient: PFUser {
         super.init()
     }
 
-    init(name: String, sex: String, age: Int, language: String) {
+    init(name: String, sex: String, age: Int, language: String, profilePicture: PFFile) {
         print(name)
         print(sex)
         print(age)
@@ -53,8 +53,8 @@ class Patient: PFUser {
         self.sex = sex
         self.age = age
         self.language = language
+        self.profilePicture = profilePicture
         super.init()
     }
-    
     
 }

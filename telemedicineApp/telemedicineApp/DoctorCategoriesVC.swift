@@ -5,7 +5,7 @@
 //  Created by Aastha Shah on 7/29/17.
 //  Copyright © 2017 Aastha Shah. All rights reserved.
 //
-
+//MARK: Aastha Shah
 import UIKit
 class DoctorSpecialtiesCell: UICollectionViewCell {
     
