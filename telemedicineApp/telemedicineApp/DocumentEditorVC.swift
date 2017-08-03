@@ -8,9 +8,7 @@
 
 import UIKit
 
-protocol ItemEdited {
-    func itemEdited(medicineName: String, notes: String)
-}
+
 
 class DocumentEditorVC: UIViewController {
     

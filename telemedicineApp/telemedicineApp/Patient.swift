@@ -40,20 +40,24 @@ class Patient: PFUser {
         }
     }
     
+    var userType :UserType?{
+        didSet{
+            self["userType"] = userType?.rawValue
+        }
+    }
+    
     override init() {
         super.init()
     }
 
     init(name: String, sex: String, age: Int, language: String) {
-        print(name)
-        print(sex)
-        print(age)
-        print(language)
+        super.init()
         self.name = name
         self.sex = sex
         self.age = age
         self.language = language
-        super.init()
+        self.userType = .patient
+        
     }
     
     

@@ -13,7 +13,7 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var userType: UserType?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Parse.enableLocalDatastore()
@@ -27,7 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         Parse.initialize(with: parseConfig)
         Patient.registerSubclass()
-        //login()
+        DoctorAn.registerSubclass()
+
+        login()
         return true
     }
 
@@ -54,18 +56,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func login() {
+        print("in App Delegate login")
         //remember user login
-        let name: String? = UserDefaults.standard.string(forKey: "name")
+        let name: String? = UserDefaults.standard.string(forKey: "username")
+        print("app delegate user type: \(userType)")
+        guard let type = userType else{
+            print("nil type app delegate")
+            return
+        }
+        
         
         if name != nil {
-            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let myTabBar = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
-            window?.rootViewController = myTabBar
-            
+            print("prepare to switch")
+            switch type{
+            case .patient: return signedInAsPatient()
+            case .doctor: return signedInAsDoctor()
+            }
         }
+
+        
     }
     
-
+    func signedInAsPatient(){
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let myTabBar = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+        print("SignedInAsPatient")
+        window?.rootViewController = myTabBar
+    }
+    
+    func signedInAsDoctor(){
+        print("in SignedInAsDoctor")
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let doctorMainVC = storyboard.instantiateViewController(withIdentifier: "Doctor Tab VC") as! UITabBarController
+        window?.rootViewController = doctorMainVC
+    }
 
 }
 
