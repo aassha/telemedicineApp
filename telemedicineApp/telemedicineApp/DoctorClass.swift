@@ -44,7 +44,7 @@ class DoctorAn: Patient {
     var doctorState: OnlineState?{
         didSet{
             print(doctorState?.rawValue ?? "No state")
-            self["state"] = doctorState?.rawValue
+            self["doctorState"] = doctorState?.rawValue
         }
     }
     

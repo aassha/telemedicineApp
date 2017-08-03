@@ -51,16 +51,13 @@ class Patient: PFUser {
     }
 
     init(name: String, sex: String, age: Int, language: String) {
-        print(name)
-        print(sex)
-        print(age)
-        print(language)
+        super.init()
         self.name = name
         self.sex = sex
         self.age = age
         self.language = language
         self.userType = .patient
-        super.init()
+        
     }
     
     

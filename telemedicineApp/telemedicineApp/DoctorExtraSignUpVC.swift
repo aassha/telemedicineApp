@@ -54,18 +54,11 @@ class DoctorExtraSignUpVC: UIViewController {
             newDoctor["state"] = state
             
             
-            //            doctor?.numYearsPractice = Int(years)
-            //            doctor?.specialty = Specialty(rawValue: specialty)
-            //            doctor?.licenseNum = Int(licenseNum)
-            //            doctor?.price = Int(price)
-            //            let state = newDoctor.doctorState?.rawValue
-            //            doctor?["state"] = doctor?.doctorState?.rawValue
-            
             newDoctor.signUpInBackground { (success, error) in
                 if success {
                     print("registered")
                     //remembers user's info
-                    UserDefaults.standard.set(self.doctor?.username, forKey: "username")
+                    UserDefaults.standard.set(newDoctor.username, forKey: "username")
                     UserDefaults.standard.synchronize()
                     //why must this be called here
                     

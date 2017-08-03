@@ -50,6 +50,8 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var cancelButton: CustomButton!
     
     @IBAction func cancelAction(_ sender: Any) {
+      let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.userType = nil
         performSegue(withIdentifier: "Sign Up To Login", sender: nil)
     }
    
@@ -192,9 +194,17 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         let profileData = UIImageJPEGRepresentation(profileImage.image!, 0.5)
         let profileFile = PFFile(name: "profile.jpg", data: profileData!)
         
-        patient = Patient.init(name: nametxt.text!, sex: sextxt.text!, age: Int(agetxt.text!)!, language: languagetxt.text!)
+        guard let name = nametxt.text, let sex = sextxt.text, let age =  agetxt.text, let language =  languagetxt.text, let username = usernametxt.text else{
+            return
+        }
+        patient = Patient.init(name: name, sex: sex, age: Int(age)!, language: language)
         patient?.username = usernametxt.text
         patient?.password = password.text
+        patient?["name"] = patient?.name
+        patient?["sex"] = patient?.sex
+        patient?["age"] = patient?.age
+        patient?["language"] = patient?.language
+        patient?["userType"] = "patient"
         //saving data to server
         patient?.signUpInBackground { (success, error) in
             if success {

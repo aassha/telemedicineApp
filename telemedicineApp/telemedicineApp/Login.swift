@@ -19,6 +19,8 @@ class Login: UIViewController {
     @IBOutlet weak var login: UIButton!
     
     @IBOutlet weak var signUp: UIButton!
+    
+    
     override func viewDidLoad() {
         let hideKeyboardTap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardTapped))
         hideKeyboardTap.numberOfTapsRequired = 1
@@ -42,6 +44,12 @@ class Login: UIViewController {
                 UserDefaults.standard.synchronize()
                 //what does this do?
                 let appDelegate: AppDelegate =  UIApplication.shared.delegate as! AppDelegate
+                guard let type = UserType(rawValue: PFUser.current()?.value(forKey: "userType") as! String) else {
+                    print("No userType received")
+                    return
+                }
+                print(type)
+                appDelegate.userType = type
                 appDelegate.login()
             }
         }

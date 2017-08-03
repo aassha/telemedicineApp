@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Patient.registerSubclass()
         DoctorAn.registerSubclass()
 
-        //login()
+        login()
         return true
     }
 
