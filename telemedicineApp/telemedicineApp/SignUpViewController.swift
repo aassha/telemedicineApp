@@ -41,8 +41,8 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
         print("Type in Sign Up View Controller: \(type)")
         switch type{
-        case .Patient: signUpPatient()
-        case .Doctor: signUpDoctor()
+        case .patient: signUpPatient()
+        case .doctor: signUpDoctor()
         }
         
     }

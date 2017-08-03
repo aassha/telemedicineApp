@@ -40,15 +40,23 @@ class DoctorAn: Patient {
 //        }
 //    }
     
-    var state: OnlineState?{
+   
+    var doctorState: OnlineState?{
         didSet{
-            self["isOnline"] = state
+            print(doctorState?.rawValue ?? "No state")
+            self["state"] = doctorState?.rawValue
+        }
+    }
+    
+    var licenseNum: Int?{
+        didSet{
+            self["licenseNum"] = licenseNum
         }
     }
     
     var specialty: Specialty?{
         didSet{
-            self["specialty"] = specialty
+            self["specialty"] = specialty?.rawValue
         }
     }
     
@@ -70,7 +78,18 @@ class DoctorAn: Patient {
         }
     }
     
+    var phoneNum: Int?{
+        didSet{
+            self["phoneNum"] = phoneNum
+        }
+    }
     
+    
+    var isOnline: Bool?{
+        didSet{
+            self["isOnline"] = isOnline
+        }
+    }
     override init() {
         super.init()
     }
@@ -81,7 +100,8 @@ class DoctorAn: Patient {
         self.sex = sex
         self.age = age
         self.language = language
-        self.userType = .Doctor
+        self.userType = .doctor
+        self.doctorState = .offline
         
     }
     

@@ -69,8 +69,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if name != nil {
             print("prepare to switch")
             switch type{
-            case .Patient: return signedInAsPatient()
-            case .Doctor: return signedInAsDoctor()
+            case .patient: return signedInAsPatient()
+            case .doctor: return signedInAsDoctor()
             }
         }
 
@@ -87,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func signedInAsDoctor(){
         print("in SignedInAsDoctor")
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let doctorMainVC = storyboard.instantiateViewController(withIdentifier: "Doctor Logged In") as! UITabBarController
+        let doctorMainVC = storyboard.instantiateViewController(withIdentifier: "Doctor Tab VC") as! UITabBarController
         window?.rootViewController = doctorMainVC
     }
 

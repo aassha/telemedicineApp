@@ -8,14 +8,14 @@
 
 import Foundation
 
-enum UserType{
-    case Patient
-    case Doctor
+enum UserType: String {
+    case patient = "patient"
+    case doctor = "doctor"
 }
 enum Specialty: String {
     case obgyn = "obgyn"
-    case dermatology = "dermatology"
-    case mentalHealth = "mentalHealth"
+    case cardiology = "cardiology"
+    case dentistry = "dentistry"
     case optometry = "optometry"
     case orthopedics = "orthopedics"
     case pediatrics = "pediatrics"

@@ -11,6 +11,10 @@ import UIKit
 class DoctorExtraSignUpVC: UIViewController {
     var doctor: DoctorAn?
     
+    @IBOutlet weak var locationField: UITextField!
+    
+    @IBOutlet weak var phoneNumberField: UITextField!
+    
     @IBOutlet weak var licenseNumberField: UITextField!
     
     @IBOutlet weak var specialtyField: UITextField!
@@ -21,7 +25,7 @@ class DoctorExtraSignUpVC: UIViewController {
     
     
     @IBAction func cancelMoreInfo(_ sender: Any) {
-       self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func finishSignUpDoctor(_ sender: Any) {
@@ -29,17 +33,35 @@ class DoctorExtraSignUpVC: UIViewController {
             print("No Doctor to sign up")
             return
         }
-        guard let licenseNum = licenseNumberField.text, let specialty = specialtyField.text, let years = yearsOfExperienceField.text, let price = priceField.text else{
+        guard let licenseNum = licenseNumberField.text, let specialty = specialtyField.text, let years = yearsOfExperienceField.text, let price = priceField.text,let phoneNum = phoneNumberField.text, let location = locationField.text else{
+            //add location
             print("Missing extra info fields")
             return
         }
         
-        if licenseNum.isEmpty || specialty.isEmpty || years.isEmpty || price.isEmpty{
+        if licenseNum.isEmpty || specialty.isEmpty || years.isEmpty || price.isEmpty || phoneNum.isEmpty{
             print("Empty fields")
         }else{
             //saving data to server
+            newDoctor.numYearsPractice = Int(years)
+            newDoctor.specialty = Specialty(rawValue: specialty)
+            newDoctor.licenseNum = Int(licenseNum)
+            newDoctor.price = Int(price)
+            newDoctor.phoneNum = Int(phoneNum)
+            newDoctor.location = location
             
-            doctor?.signUpInBackground { (success, error) in
+            let state = newDoctor.doctorState?.rawValue
+            newDoctor["state"] = state
+            
+            
+            //            doctor?.numYearsPractice = Int(years)
+            //            doctor?.specialty = Specialty(rawValue: specialty)
+            //            doctor?.licenseNum = Int(licenseNum)
+            //            doctor?.price = Int(price)
+            //            let state = newDoctor.doctorState?.rawValue
+            //            doctor?["state"] = doctor?.doctorState?.rawValue
+            
+            newDoctor.signUpInBackground { (success, error) in
                 if success {
                     print("registered")
                     //remembers user's info
@@ -60,24 +82,24 @@ class DoctorExtraSignUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

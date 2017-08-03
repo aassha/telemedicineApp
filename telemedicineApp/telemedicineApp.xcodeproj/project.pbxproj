@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A13695B11F32A35D00354523 /* DoctorProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13695B01F32A35D00354523 /* DoctorProfileVC.swift */; };
 		A138E53C1F30DF63002AC40A /* ProtocolEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A138E53B1F30DF63002AC40A /* ProtocolEnum.swift */; };
 		A138E53E1F30E75D002AC40A /* DoctorClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A138E53D1F30E75D002AC40A /* DoctorClass.swift */; };
 		A138E5401F30F5D8002AC40A /* DoctorExtraSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A138E53F1F30F5D8002AC40A /* DoctorExtraSignUpVC.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A13695B01F32A35D00354523 /* DoctorProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoctorProfileVC.swift; path = ../DoctorProfileVC.swift; sourceTree = "<group>"; };
 		A138E53B1F30DF63002AC40A /* ProtocolEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolEnum.swift; sourceTree = "<group>"; };
 		A138E53D1F30E75D002AC40A /* DoctorClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorClass.swift; sourceTree = "<group>"; };
 		A138E53F1F30F5D8002AC40A /* DoctorExtraSignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorExtraSignUpVC.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				EDDCC88C1F26DEAF00EBDD1F /* Util.swift */,
 				EDDCC8921F26E72900EBDD1F /* RoundImageView.swift */,
 				ED5B55A11F26CE4900E83BDB /* Assets.xcassets */,
+				A13695B01F32A35D00354523 /* DoctorProfileVC.swift */,
 				ED500F481F2CDAD000715B0C /* DoctorCategoriesModel.swift */,
 				ED500F461F2CDAA700715B0C /* DoctorCategoriesVC.swift */,
 				ED2AD6581F2D5F62008367EB /* DoctorModel.swift */,
@@ -376,6 +379,7 @@
 				EDDCC89D1F2A7AE300EBDD1F /* SignUpViewController.swift in Sources */,
 				EDDCC8931F26E72900EBDD1F /* RoundImageView.swift in Sources */,
 				A138E5401F30F5D8002AC40A /* DoctorExtraSignUpVC.swift in Sources */,
+				A13695B11F32A35D00354523 /* DoctorProfileVC.swift in Sources */,
 				EDDCC89B1F29606500EBDD1F /* DocumentEditorVC.swift in Sources */,
 				A138E53E1F30E75D002AC40A /* DoctorClass.swift in Sources */,
 				ED5B559D1F26CE4900E83BDB /* Login.swift in Sources */,

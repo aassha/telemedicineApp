@@ -56,8 +56,8 @@ class Login: UIViewController {
         print("User type in prepare for segue login VC: \(userType!)")
         if let signUpVC: SignUpViewController = segue.destination as? SignUpViewController, let type = userType {
             switch type{
-            case .Patient: signUpVC.userType = .Patient
-            case .Doctor: signUpVC.userType = .Doctor
+            case .patient: signUpVC.userType = .patient
+            case .doctor: signUpVC.userType = .doctor
             }
         }
     }
@@ -65,7 +65,7 @@ class Login: UIViewController {
     @IBAction func signUpPatient(_ sender: Any) {
          let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         
-        userType = .Patient
+        userType = .patient
         appDelegate.userType = userType
         performSegue(withIdentifier: "Log In To Sign Up", sender: nil)
     }
@@ -74,7 +74,7 @@ class Login: UIViewController {
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         
         
-        userType = .Doctor
+        userType = .doctor
         appDelegate.userType = userType
         
         performSegue(withIdentifier: "Log In To Sign Up", sender: nil)
