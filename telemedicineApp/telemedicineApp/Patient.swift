@@ -46,49 +46,6 @@ class Patient: PFUser {
         }
     }
     
-    var licenseNum: Int?{
-        didSet{
-            self["licenseNum"] = licenseNum
-        }
-    }
-    
-    var specialty: Specialty?{
-        didSet{
-            self["specialty"] = specialty?.rawValue
-        }
-    }
-    
-    var numYearsPractice: Int?{
-        didSet{
-            self["numYearsPractice"] = numYearsPractice
-        }
-    }
-    
-    var price: Int?{
-        didSet{
-            self["price"] = price
-        }
-    }
-    
-    var location: String?{
-        didSet{
-            self["location"] = location
-        }
-    }
-    
-    var phoneNum: Int?{
-        didSet{
-            self["phoneNum"] = phoneNum
-        }
-    }
-    
-    
-    var isOnline: Bool?{
-        didSet{
-            self["isOnline"] = isOnline
-        }
-    }
-    
     override static func parseClassName() -> String {
         return "_User"
     }
